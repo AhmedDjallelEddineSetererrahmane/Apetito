@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingRight="8dp"
+    android:paddingLeft="8dp"
+    android:paddingBottom="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp">
+
+    <LinearLayout
+        android:id="@+id/mLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+            android:id="@+id/restaurantImage"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            app:srcCompat="@drawable/ic_listimage"
+            android:background="@drawable/round_outline"
+            />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/infosCard"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6.8"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="5dp"
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_marginBottom="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingRight="24dp"
+                android:weightSum="5">
+
+                <TextView
+                    android:id="@+id/restaurantName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="2"
+                    android:text="Restaurant Name"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/restaurantAdr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:text="Cite 250 logts"
+                    android:textColor="@color/mGrey"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/restaurantOpening"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:text="11:00am-11:00pm"
+                    android:textColor="@color/mGrey"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/rating"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:background="@drawable/shape_2"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="4.8"
+        android:textAlignment="gravity"
+        android:textColor="@color/mWhite"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/mLayout"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toRightOf="@+id/mLayout"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/mLayout"
+        app:layout_constraintVertical_bias="0.4" />
+
+
+
+
+</android.support.constraint.ConstraintLayout>

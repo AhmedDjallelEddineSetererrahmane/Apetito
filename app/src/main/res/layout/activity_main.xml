@@ -4,15 +4,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.esi.tdm.apetito.MainActivity">
+    tools:context="com.esi.tdm.apetito.activities.MainActivity"
+    android:background="@color/mWhite">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/shape_1"
+        app:srcCompat="@drawable/fancyrestaurants"
+        />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@id/imageView2"
+        app:layout_constraintLeft_toLeftOf="@id/imageView2"
+        app:layout_constraintRight_toRightOf="@id/imageView2"
+        app:layout_constraintStart_toStartOf="@id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.0">
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="6">
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/mGreen"
+                app:srcCompat="@drawable/ic_location" />
+
+            <TextView
+                android:id="@+id/searchtext"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:layout_weight="4"
+                android:fontFamily="@font/robotobold"
+                android:text="Chercher un Restaurant"
+                android:textColor="@color/mGrey"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_search" />
+        </android.support.v7.widget.LinearLayoutCompat>
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardView"
+        app:layout_constraintVertical_bias="0.0">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nos Resraurants"
+            android:textColor="@color/mGrey"
+            android:textSize="16sp"
+            android:layout_margin="12dp"/>
+
+        <ListView
+            android:id="@+id/restaurantList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="15dp"></ListView>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

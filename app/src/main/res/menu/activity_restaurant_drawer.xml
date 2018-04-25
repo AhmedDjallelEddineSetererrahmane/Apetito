@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Acceuil" />
+        <item
+            android:id="@+id/categorie"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Catégorie" />
+        <item
+            android:id="@+id/allDishes"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Tous les plats" />
+        <item
+            android:id="@+id/binary"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Les Formules Binaire" />
+    </group>
+
+    <item android:title="Commande">
+        <menu>
+            <item
+                android:id="@+id/basket"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Mon Panier" />
+            <item
+                android:id="@+id/reserv"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Reserver un table" />
+        </menu>
+    </item>
+
+</menu>
