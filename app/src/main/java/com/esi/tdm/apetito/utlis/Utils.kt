@@ -1,5 +1,8 @@
 package com.esi.tdm.apetito.utlis
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import com.esi.tdm.apetito.R
 import com.esi.tdm.apetito.models.*
 
@@ -35,5 +38,14 @@ class Utils {
         var image = R.drawable.ic_listimage
         for (j in 0..i) list.add(CartItem("Plat1",1,1000F,image))
         return list
+    }
+    fun openFacebookPage(ctx: Context, facebookUrl: String) {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(facebookUrl))
+        ctx.startActivity(intent)
+    }
+
+    fun openTwitterPage(ctx: Context, twitterUrl: String) {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(twitterUrl))
+        ctx.startActivity(intent)
     }
 }

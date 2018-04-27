@@ -5,7 +5,7 @@ package com.esi.tdm.apetito.models
  */
 data class Restaurant(var name: String = "",
                       var adr: String = "",
-                      var geoPosition: Position,
+                      var geoPosition: Position = Position(),
                       var openingHour: String = "",
                       var ClosingHour: String = "",
                       var rating: Float = 0F,

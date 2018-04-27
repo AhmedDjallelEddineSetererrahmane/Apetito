@@ -51,7 +51,7 @@
             android:textColor="@color/logInPrimaryDark"
             />
         <Button
-            android:id="@+id/synchroBtn"
+            android:id="@+id/orderBtn"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="50dip"

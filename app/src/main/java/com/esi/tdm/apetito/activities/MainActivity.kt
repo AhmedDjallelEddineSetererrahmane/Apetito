@@ -1,8 +1,10 @@
 package com.esi.tdm.apetito.activities
 
+import android.app.Fragment
 import android.graphics.Typeface
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.esi.tdm.apetito.R
 import com.esi.tdm.apetito.adapters.RestaurantAdapter
 import com.esi.tdm.apetito.utlis.Utils
@@ -22,9 +24,17 @@ class MainActivity : AppCompatActivity() {
 
         //OnClick
 
+
         restaurantList.setOnItemClickListener{adapterView,view,i,l ->
-            startActivity(intentFor<RestaurantActivity>("pos" to i))
+            if (isTwoPane()){
+
+            }
+            else{
+                startActivity(intentFor<RestaurantActivity>("pos" to i))
+            }
         }
     }
+
+    fun isTwoPane() = findViewById<View>(R.id.fragment3) != null
 
 }

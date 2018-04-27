@@ -13,6 +13,7 @@ import android.widget.TextView
 import android.widget.Toolbar
 
 import com.esi.tdm.apetito.R
+import com.esi.tdm.apetito.activities.RestaurantActivity
 import com.esi.tdm.apetito.utlis.Utils
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -24,8 +25,10 @@ import com.synnapps.carouselview.CarouselView
 import com.synnapps.carouselview.ImageListener
 import kotlinx.android.synthetic.main.activity_restaurant.*
 import kotlinx.android.synthetic.main.fragment_restaurant_info.*
+import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.sdk25.coroutines.onClick
 import org.jetbrains.anko.support.v4.email
+import org.jetbrains.anko.support.v4.intentFor
 import org.jetbrains.anko.support.v4.makeCall
 import org.jetbrains.anko.support.v4.toast
 
@@ -33,7 +36,7 @@ import org.jetbrains.anko.support.v4.toast
 /**
  * A simple [Fragment] subclass.
  */
-class RestaurantInfoFragment : Fragment() ,OnMapReadyCallback{
+class RestaurantInfo2Fragment : Fragment() ,OnMapReadyCallback{
 
 
     var restaurantImages = arrayOf(R.drawable.resto_1,R.drawable.resto_2,R.drawable.resto_3)
@@ -41,7 +44,7 @@ class RestaurantInfoFragment : Fragment() ,OnMapReadyCallback{
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        var view  = inflater!!.inflate(R.layout.fragment_restaurant_info, container, false)
+        var view  = inflater!!.inflate(R.layout.fragment_restaurant_info2, container, false)
         var carouselView = view.findViewById<CarouselView>(R.id.restoCarousel) as CarouselView
         carouselView.pageCount = restaurantImages.size
         carouselView.setImageListener(imageListener)
@@ -49,6 +52,7 @@ class RestaurantInfoFragment : Fragment() ,OnMapReadyCallback{
         var twitter = view.findViewById<ImageView>(R.id.twitter) as ImageView
         var email = view.findViewById<TextView>(R.id.email) as TextView
         var phone = view.findViewById<TextView>(R.id.phoneNumber) as TextView
+        var open = view.findViewById<ImageView>(R.id.openResto) as ImageView
 
 
         var utils = Utils()
@@ -68,6 +72,10 @@ class RestaurantInfoFragment : Fragment() ,OnMapReadyCallback{
             email(email.text.toString(),"Commande","")
         })
 
+        open.setOnClickListener(View.OnClickListener {
+            startActivity(intentFor<RestaurantActivity>())
+
+        })
 
         val mapFragment = childFragmentManager
                 .findFragmentById(R.id.map1) as SupportMapFragment
