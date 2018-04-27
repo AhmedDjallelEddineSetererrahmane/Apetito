@@ -8,5 +8,14 @@
     <color name="mGrey">#656474</color>
     <color name="divider2">#dadcde</color>
     <color name="divider">#BDBDBD</color>
+    <color name="mGrey2">#A0656474</color>
+    <color name="mGrey3">#30656474</color>
 
+    <color name="logInPrimaryDark">#161719</color>
+    <color name="yellowApp">#ecb72d</color>
+
+    <color name="grey">#313131</color>
+    <color name="grey2">#9E9E9E</color>
+    <color name="grey3">#757575</color>
+    <color name="grey4">#FAFAFA</color>
 </resources>

@@ -1,0 +1,145 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.esi.tdm.apetito.fragments.DishInfosFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/dishImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/resto_2" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dishImage"
+            android:orientation="horizontal"
+            android:id="@+id/layout1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="12dp"
+                android:background="@drawable/shape_2"
+                android:fontFamily="@font/robotobold"
+                android:padding="10sp"
+                android:text="800 DA"
+                android:textColor="@color/mWhite"
+                android:textSize="22sp"
+                android:id="@+id/dishPriceDetail"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_margin="14dp"
+                android:fontFamily="@font/robotobold"
+                android:padding="6sp"
+                android:text="Dish Name"
+                android:textColor="@android:color/black"
+                android:textSize="22sp"
+                android:id="@+id/dishNameDetail"/>
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout1"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/robotoregular"
+            android:padding="8sp"
+            android:text="Lorem ipsum dolor sit amet, qui ubique numquam fierent ad. Sed te erant nullam interpretariss tractatos disputando te pri. Has te timeam gubergren. Fierent patrioque eu usu."
+            android:textColor="@color/divider"
+            android:textSize="12sp"
+            android:id="@+id/dishDescription"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dishDescription"
+            android:id="@+id/note">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:hint="Add a Note"
+                android:textColor="@color/mGrey"
+                android:textSize="12sp" />
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/note"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_4"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="10dp"
+                    android:text="-"
+                    android:textColor="@color/mWhite"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="2"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/mWhite"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingBottom="10dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="10dp"
+                    android:text="+"
+                    android:textColor="@color/mWhite"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:layout_weight="3"
+                android:background="@drawable/shape_4"
+                android:fontFamily="@font/robotobold"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="ADD TO CART"
+                android:textAlignment="gravity"
+                android:textColor="@color/mWhite"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>

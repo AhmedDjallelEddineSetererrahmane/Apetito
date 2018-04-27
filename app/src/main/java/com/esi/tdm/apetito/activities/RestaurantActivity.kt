@@ -21,17 +21,17 @@ class RestaurantActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_restaurant)
-        //setSupportActionBar(toolbar)
+        setSupportActionBar(toolbar)
 
         //fab.setOnClickListener { view ->
             //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     //.setAction("Action", null).show()
         //}
 
-        //val toggle = ActionBarDrawerToggle(
-                //this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
-        //drawer_layout.addDrawerListener(toggle)
-        //toggle.syncState()
+        val toggle = ActionBarDrawerToggle(
+                this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        drawer_layout.addDrawerListener(toggle)
+        toggle.syncState()
 
 
         supportFragmentManager.beginTransaction()

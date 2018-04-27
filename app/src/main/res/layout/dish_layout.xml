@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/resto_2"
+        android:scaleType="fitXY"
+        android:id="@+id/dishImageList"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_2"
+            android:text="800 DA"
+            android:padding="8sp"
+            android:textSize="16sp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/mWhite"
+            android:layout_gravity="top|right"
+            android:fontFamily="@font/robotobold"
+            android:id="@+id/dishPrice"
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_3"
+            android:layout_gravity="bottom"
+            android:paddingLeft="6dp"
+            android:text="Dish Name"
+            android:textColor="@color/mWhite"
+            android:textSize="24sp"
+            android:fontFamily="@font/robotobold"
+            android:id="@+id/dishName"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_margin="5dp"
+        app:srcCompat="@drawable/ic_favorite_border_white_24dp" />
+</FrameLayout>
