@@ -5,5 +5,6 @@ package com.esi.tdm.apetito.models
  */
 data class Dish(var name: String = "",
                 var description: String = "",
-                var price: Float = 0F) {
+                var price: Float = 0F,
+                var listImage:Int=0) {
 }

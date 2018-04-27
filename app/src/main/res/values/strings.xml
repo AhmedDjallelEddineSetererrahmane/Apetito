@@ -10,4 +10,107 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="copyright">"@Copyright 2017 Apetito</string>
+
+
+    <string-array name="restaurants">
+        <item>Mi Gusto</item>
+        <item>Mahboull</item>
+        <item>Majnouna</item>
+        <item>El Mat3am</item>
+        <item>El khayma</item>
+    </string-array>
+
+    <string-array name="restaurantsAdr">
+        <item>Setif Centre ville enface ain fouara</item>
+        <item>Alger Centre</item>
+        <item>Zeboudja en face le stade</item>
+        <item>Tizi ouzou Centre ville</item>
+        <item>Dali Brahim</item>
+    </string-array>
+    <string-array name="restaurantsrating">
+        <item>4.9</item>
+        <item>3.8</item>
+        <item>4.3</item>
+        <item>4.7</item>
+        <item>4.3</item>
+    </string-array>
+
+    <string-array name="categories">
+        <item>Entrees</item>
+        <item>Plats Principale</item>
+        <item>Desserts</item>
+        <item>Boissons</item>
+        <item>Plat</item>
+        <item>Plats Vegetariens</item>
+        <item>Plats Diabetiques</item>
+    </string-array>
+
+
+    <string-array name="dishEntryName">
+        <item>Entree 1</item>
+        <item>Entree 2</item>
+        <item>Entree 3</item>
+        <item>Entree 4</item>
+        <item>Entree 5</item>
+        <item>Entree 6</item>
+
+    </string-array>
+
+    <string-array name="dishName">
+        <item>Plat 1</item>
+        <item>Plat 2</item>
+        <item>Plat 3</item>
+        <item>Plat 4</item>
+        <item>Plat 5</item>
+        <item>Plat 6</item>
+    </string-array>
+
+    <string-array name="vegitarianName">
+        <item>Plat vegetarien 1</item>
+        <item>Plat vegetarien 2</item>
+        <item>Plat vegetarien 3</item>
+        <item>Plat vegetarien 4</item>
+        <item>Plat vegetarien 5</item>
+        <item>Plat vegetarien 6</item>
+    </string-array>
+
+    <string-array name="diabetiquesName">
+        <item>Plat diabetique 1</item>
+        <item>Plat diabetique 2</item>
+        <item>Plat diabetique 3</item>
+        <item>Plat diabetique 4</item>
+        <item>Plat diabetique 5</item>
+        <item>Plat diabetique 6</item>
+    </string-array>
+
+    <string-array name="dessertsName">
+        <item>Dessert 1</item>
+        <item>Dessert 2</item>
+        <item>Dessert 3</item>
+        <item>Dessert 4</item>
+        <item>Dessert 5</item>
+        <item>Dessert 6</item>
+    </string-array>
+
+    <string-array name="drinksName">
+        <item>Boisson 1</item>
+        <item>Boisson 2</item>
+        <item>Boisson 3</item>
+        <item>Boisson 4</item>
+        <item>Boisson 5</item>
+        <item>Boisson 6</item>
+    </string-array>
+
+
+    <string-array name="dishPrice">
+        <item>550</item>
+        <item>750</item>
+        <item>1000</item>
+        <item>1200</item>
+        <item>800</item>
+        <item>950</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
 </resources>

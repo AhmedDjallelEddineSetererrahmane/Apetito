@@ -1,13 +1,31 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.esi.tdm.apetito.fragments.AllDishesFragment">
+    tools:context="com.esi.tdm.apetito.fragments.AllDishesFragment"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="All Dishes" />
+        android:layout_height="wrap_content"
+        android:text="Tous les Plats"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:gravity="center_vertical|center_horizontal"
+        android:textAlignment="gravity"
+        android:fontFamily="@font/robotobold"/>
 
-</FrameLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/mGreen" /><View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/allDishes"
+        android:divider="@null"
+        android:dividerHeight="10dp"></ListView>
+
+</LinearLayout>

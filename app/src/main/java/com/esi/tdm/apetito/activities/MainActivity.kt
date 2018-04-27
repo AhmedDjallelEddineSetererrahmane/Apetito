@@ -15,9 +15,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var utlis = Utils()
+        var utils = Utils()
 
-        var restosAdapter = RestaurantAdapter(this,utlis.populateRestosData(7))
+        var restosAdapter = RestaurantAdapter(this,utils.populateRestosData(7))
         restaurantList.adapter = restosAdapter
 
         //OnClick

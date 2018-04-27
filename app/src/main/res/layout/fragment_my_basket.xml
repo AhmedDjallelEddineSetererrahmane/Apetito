@@ -1,13 +1,68 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.esi.tdm.apetito.fragments.MyBasketFragment">
+    tools:context="com.esi.tdm.apetito.fragments.MyBasketFragment"
+    android:orientation="vertical">
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mon Panier"
+            android:textSize="16sp"
+            android:layout_alignParentTop="true"
+            android:textColor="@android:color/black"
+            android:gravity="center_vertical|center_horizontal"
+            android:textAlignment="gravity"
+            android:fontFamily="@font/robotobold"/>
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/mGreen"
+            android:layout_below="@+id/text1"
+            android:id="@+id/v1"/><View
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="My Basket" />
+        android:layout_height="4dp"/>
+        <ListView
+            android:layout_below="@+id/v1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CartItems"
+            android:divider="@null"
+            android:dividerHeight="10dp"
+            android:layout_above="@id/layout3"></ListView>
+    <LinearLayout
+        android:id="@+id/layout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:weightSum="3">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="total de la commande : 1000 DA"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:layout_marginLeft="6dp"
+            android:textColor="@color/logInPrimaryDark"
+            />
+        <Button
+            android:id="@+id/synchroBtn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dip"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/shape_6"
+            android:padding="8dip"
+            android:text="Commander"
+            android:textColor="@color/mWhite"
+            android:textSize="14dip"
+            android:textStyle="bold"
+            android:layout_margin="6dp"/>
+    </LinearLayout>
 
-</FrameLayout>
+</RelativeLayout>

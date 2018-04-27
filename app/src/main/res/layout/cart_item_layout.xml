@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_listimage"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/itemCartImage"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/itemCartImage"
+        android:id="@+id/layout2"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/itemCartName"
+            android:text="Item Name"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"
+            android:fontFamily="@font/robotobold"
+            android:textColor="@android:color/black"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/itemCartQty"
+            android:text="Quantity : 1"
+            android:layout_marginLeft="8dp"
+            android:textSize="16sp"
+            android:fontFamily="@font/robotobold"
+            android:textColor="@color/mGrey"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="4dp"
+            android:padding="8dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_delete_black_18dp"
+                android:layout_margin="4dp"/>
+            <Space
+                android:layout_width="16dp"
+                android:layout_height="match_parent" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_mode_edit_black_18dp"
+                android:layout_margin="4dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_margin="16dp"
+        android:background="@drawable/shape_2"
+        android:fontFamily="@font/robotobold"
+        android:padding="12sp"
+        android:text="800 DA"
+        android:textColor="@color/mWhite"
+        android:textSize="20sp"
+        android:id="@+id/totalPrice"
+        />
+</RelativeLayout>
