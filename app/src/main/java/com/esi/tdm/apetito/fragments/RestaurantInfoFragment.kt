@@ -9,9 +9,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toolbar
 
 import com.esi.tdm.apetito.R
+import com.esi.tdm.apetito.utlis.Utils
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -22,6 +24,9 @@ import com.synnapps.carouselview.CarouselView
 import com.synnapps.carouselview.ImageListener
 import kotlinx.android.synthetic.main.activity_restaurant.*
 import kotlinx.android.synthetic.main.fragment_restaurant_info.*
+import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jetbrains.anko.support.v4.email
+import org.jetbrains.anko.support.v4.makeCall
 import org.jetbrains.anko.support.v4.toast
 
 
@@ -34,8 +39,7 @@ class RestaurantInfoFragment : Fragment() ,OnMapReadyCallback{
     var restaurantImages = arrayOf(R.drawable.resto_1,R.drawable.resto_2,R.drawable.resto_3)
     private lateinit var mMap: GoogleMap
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         var view  = inflater!!.inflate(R.layout.fragment_restaurant_info, container, false)
         var carouselView = view.findViewById<CarouselView>(R.id.restoCarousel) as CarouselView
@@ -43,12 +47,25 @@ class RestaurantInfoFragment : Fragment() ,OnMapReadyCallback{
         carouselView.setImageListener(imageListener)
         var facebook = view.findViewById<ImageView>(R.id.facebook) as ImageView
         var twitter = view.findViewById<ImageView>(R.id.twitter) as ImageView
+        var email = view.findViewById<TextView>(R.id.email) as TextView
+        var phone = view.findViewById<TextView>(R.id.phoneNumber) as TextView
 
+
+        var utils = Utils()
+        val facebookUrl  = "fb://page/218641444910278"
+        var twitterUrl = "twitter://user?user_id=382267114"
         facebook.setOnClickListener(View.OnClickListener {
-            toast("facebook")
+            activity?.let { it1 -> utils.openFacebookPage(it1,facebookUrl) }
         })
         twitter.setOnClickListener(View.OnClickListener {
-            toast("twitter")
+            activity?.let { it1 -> utils.openTwitterPage(it1,twitterUrl) }
+        })
+
+        phone.setOnClickListener(View.OnClickListener {
+            makeCall(phone.text.toString())
+        })
+        email.setOnClickListener(View.OnClickListener {
+            email(email.text.toString(),"Commande","")
         })
 
 

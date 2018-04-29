@@ -11,8 +11,10 @@ import android.view.MenuItem
 import android.widget.Toast
 import com.esi.tdm.apetito.R
 import com.esi.tdm.apetito.fragments.*
+import com.esi.tdm.apetito.utlis.Utils
 import kotlinx.android.synthetic.main.activity_restaurant.*
 import kotlinx.android.synthetic.main.app_bar_restaurant.*
+import kotlinx.android.synthetic.main.fragment_restaurant_info.*
 import org.jetbrains.anko.toast
 
 class RestaurantActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -39,7 +41,12 @@ class RestaurantActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
                 .commit()
         nav_view.setNavigationItemSelectedListener(this)
         position = intent.getIntExtra("pos",0)
-        toast(position.toString())
+
+        //var utils = Utils()
+        //var list = utils.populateRestosData(this)
+        //restoName.setText(list[position].name)
+        //restoADR1.setText(list[position].adr)
+        //restoRate.setText(list[position].rating.toString())
     }
 
     override fun onBackPressed() {

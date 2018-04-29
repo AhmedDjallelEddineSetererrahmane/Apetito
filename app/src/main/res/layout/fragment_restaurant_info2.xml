@@ -1,0 +1,271 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.esi.tdm.apetito.fragments.RestaurantInfo2Fragment">
+
+        <com.synnapps.carouselview.CarouselView
+            android:id="@+id/restoCarousel"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:fillColor="#FFFFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:pageColor="#00000000"
+            app:radius="6dp"
+            app:slideInterval="3000"
+            app:strokeColor="#FF777777"
+            app:strokeWidth="1dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/restoCarousel"
+            app:layout_constraintVertical_bias="1.0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="7">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:fontFamily="@font/robotobold"
+                    android:padding="6dp"
+                    android:text="Restaurant Name"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5" />
+
+                <ImageView
+                    android:id="@+id/openResto"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_store_black_24dp"/>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_2"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="4,9"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/mWhite"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:padding="8dp"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit amet, qui ubique numquam fierent ad. Sed te erant nullam interpretariss tractatos disputando te pri. Has te timeam gubergren. Fierent patrioque eu usu."
+                android:textSize="16sp"
+                android:textColor="@color/mGrey"
+                android:fontFamily="@font/robotoregular"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_my_location_black_24dp"
+                    android:id="@+id/i1"
+                    android:padding="4dp"
+                    android:layout_marginLeft="8dp"/>
+                <Space
+                    android:id="@+id/sp1"
+                    android:layout_width="24dip"
+                    android:layout_height="match_parent"
+                    android:layout_toEndOf="@id/i1" />
+
+                <TextView
+                    android:id="@+id/restoADR1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sp1"
+                    android:layout_marginStart="14dp"
+                    android:layout_toEndOf="@+id/sp1"
+                    android:fontFamily="@font/robotoregular"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="cite 250 logts batiment B2"
+                    android:textAlignment="gravity"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/restoADR1"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/layout4">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Position du restaurant sur la MAP"
+                        android:textAlignment="center"
+                        android:textColor="@color/grey2"
+                        android:textSize="16dip" />
+
+                    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:tools="http://schemas.android.com/tools"
+                        xmlns:map="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/map1"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dip"
+                        android:layout_marginLeft="16dip"
+                        android:layout_marginRight="16dip"
+                        tools:context="com.esi.tdm.apetito.fragments.RestaurantInfoFragment"
+                        map:cameraBearing="112.5"
+                        map:cameraTargetLat="-33.796923"
+                        map:cameraTargetLng="150.922433"
+                        map:cameraTilt="30"
+                        map:cameraZoom="13"
+                        map:mapType="normal"
+                        map:uiCompass="false"
+                        map:uiRotateGestures="true"
+                        map:uiScrollGestures="false"
+                        map:uiTiltGestures="true"
+                        map:uiZoomControls="false"
+                        map:uiZoomGestures="true"/>
+                </LinearLayout>
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dip"
+                android:layout_margin="8dip"
+                android:background="@color/divider2" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_mail_outline_black_24dp"
+                    android:id="@+id/i2"
+                    android:padding="4dp"
+                    android:layout_marginLeft="8dp"/>
+                <Space
+                    android:id="@+id/sp2"
+                    android:layout_width="24dip"
+                    android:layout_height="match_parent"
+                    android:layout_toEndOf="@id/i2" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/sp2"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textAlignment="gravity"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="email@email.com"
+                    android:id="@+id/email"
+                    />
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dip"
+                android:layout_margin="8dip"
+                android:background="@color/divider2" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_phone_black_24dp"
+                    android:id="@+id/i3"
+                    android:padding="4dip"
+                    android:layout_marginLeft="8dp"/>
+                <Space
+                    android:id="@+id/sp3"
+                    android:layout_width="24dip"
+                    android:layout_height="match_parent"
+                    android:layout_toEndOf="@id/i3" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/sp3"
+                    android:layout_centerInParent="true"
+                    android:textAlignment="gravity"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="0669408413"
+                    android:id="@+id/phoneNumber"
+                    />
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dip"
+                android:layout_margin="8dip"
+                android:background="@color/divider2" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal"
+                >
+                <ImageView
+                    android:id="@+id/facebook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_facebook"
+                    android:layout_margin="6dp"/>
+                <ImageView
+                    android:id="@+id/twitter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_twitter"
+                    android:layout_margin="6dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

@@ -40,9 +40,8 @@
     <string-array name="categories">
         <item>Entrees</item>
         <item>Plats Principale</item>
-        <item>Desserts</item>
         <item>Boissons</item>
-        <item>Plat</item>
+        <item>Desserts</item>
         <item>Plats Vegetariens</item>
         <item>Plats Diabetiques</item>
     </string-array>
@@ -112,5 +111,22 @@
         <item>800</item>
         <item>950</item>
     </string-array>
+
+    <string-array name="cartItemDishNames">
+
+    </string-array>
+    <string-array name="cartItemDishPrice">
+
+    </string-array>
+    <string-array name="cartItemDishQuantity">
+
+    </string-array>
+    <string-array name="cartItemDishImage">
+
+    </string-array>
+
+    <string name="dishDescription">Lorem ipsum dolor sit amet, qui ubique numquam fierent ad. Sed te erant nullam interpretariss tractatos disputando te pri. Has te timeam gubergren. Fierent patrioque eu usu.</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_tab">TabActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>

@@ -46,7 +46,7 @@ class RestaurantAdapter(_ctx:Context,_restosList:List<Restaurant>):BaseAdapter()
             viewHolder = view.getTag() as ViewHolder
         }
 
-        var bitmap = BitmapFactory.decodeResource(ctx.resources,R.drawable.ic_listimage)
+        var bitmap = BitmapFactory.decodeResource(ctx.resources,restosList.get(p0).listImage)
         var round = RoundedBitmapDrawableFactory.create(ctx.resources,bitmap)
         round.cornerRadius = 7.5F
         //viewHolder.image.setImageResource(restosList.get(p0).listImage)
