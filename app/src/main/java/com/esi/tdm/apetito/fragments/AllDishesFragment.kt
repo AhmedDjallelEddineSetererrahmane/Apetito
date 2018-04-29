@@ -2,6 +2,7 @@ package com.esi.tdm.apetito.fragments
 
 
 import android.app.Application
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -13,8 +14,10 @@ import android.widget.ListView
 import com.esi.tdm.apetito.R
 import com.esi.tdm.apetito.activities.DishInfoActivity
 import com.esi.tdm.apetito.adapters.DishesAdapter
+import com.esi.tdm.apetito.models.Dish
 import com.esi.tdm.apetito.utlis.Utils
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_dish_infos.*
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.support.v4.intentFor
 
@@ -34,11 +37,26 @@ class AllDishesFragment : Fragment() {
         listView.adapter = adapter
 
         listView.setOnItemClickListener{adapterView,view,i,l ->
-            val intent = Intent(activity , DishInfoActivity::class.java)
-            intent.putExtra("index",i)
-            startActivity(intent)
+            if (isTwoPan()){
+                this!!.activity?.let { displayDetail(it,i) }
+            }
+            else{
+                val intent = Intent(activity , DishInfoActivity::class.java)
+                intent.putExtra("index",i)
+                startActivity(intent)
+            }
         }
         return view
     }
 
+    fun isTwoPan() = activity?.findViewById<View>(R.id.fragment10) !=null
+    fun displayDetail(_ctx: Context, i:Int){
+        var list = mutableListOf<Dish>()
+        var utils = Utils()
+        list = utils.populateDishesEntries(_ctx) as MutableList<Dish>
+        dishImage.setImageResource(list.get(i).listImage)
+        dishPriceDetail.setText(list.get(i).price.toString())
+        dishNameDetail.setText(list.get(i).name)
+        dishDescription.setText(list.get(i).description)
+    }
 }// Required empty public constructor

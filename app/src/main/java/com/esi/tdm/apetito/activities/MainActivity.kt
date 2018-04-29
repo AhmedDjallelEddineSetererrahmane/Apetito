@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         var utils = Utils()
 
-        var restosAdapter = RestaurantAdapter(this,utils.populateRestosData(7))
+        var restosAdapter = RestaurantAdapter(this,utils.populateRestosData(this))
         restaurantList.adapter = restosAdapter
 
         //OnClick

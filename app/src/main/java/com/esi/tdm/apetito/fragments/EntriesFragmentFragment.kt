@@ -1,6 +1,8 @@
 package com.esi.tdm.apetito.fragments
 
 
+import android.arch.lifecycle.ViewModelProvider
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -12,7 +14,10 @@ import android.widget.ListView
 import com.esi.tdm.apetito.R
 import com.esi.tdm.apetito.activities.DishInfoActivity
 import com.esi.tdm.apetito.adapters.DishesAdapter
+import com.esi.tdm.apetito.helpers.DishModel
+import com.esi.tdm.apetito.models.Dish
 import com.esi.tdm.apetito.utlis.Utils
+import kotlinx.android.synthetic.main.fragment_dish_infos.*
 
 
 /**
@@ -26,15 +31,33 @@ class EntriesFragmentFragment : Fragment() {
         var view =  inflater!!.inflate(R.layout.fragment_entries, container, false)
         var listView = view.findViewById<ListView>(R.id.entries) as ListView
         var utils = Utils()
-        var adapter = activity?.let { DishesAdapter(it,utils.populateDishes(8)) }
+
+        var adapter = activity?.let { DishesAdapter(it,utils.populateDishesEntries(activity!!)) }
         listView.adapter = adapter
 
         listView.setOnItemClickListener{adapterView,view,i,l ->
-
-            val intent = Intent(activity , DishInfoActivity::class.java)
-            intent.putExtra("index",i)
-            startActivity(intent)        }
+            if (isTwoPan()){
+                this!!.activity?.let { displayDetail(it,i) }
+            }
+            else{
+                val intent = Intent(activity , DishInfoActivity::class.java)
+                intent.putExtra("index",i)
+                intent.putExtra("category",0)
+                startActivity(intent)
+            }
+        }
         return view
+    }
+
+    fun isTwoPan() = activity?.findViewById<View>(R.id.fragment4) !=null
+    fun displayDetail(_ctx:Context,i:Int){
+        var list = mutableListOf<Dish>()
+        var utils = Utils()
+        list = utils.populateDishesEntries(_ctx) as MutableList<Dish>
+        dishImage.setImageResource(list.get(i).listImage)
+        dishPriceDetail.setText(list.get(i).price.toString())
+        dishNameDetail.setText(list.get(i).name)
+        dishDescription.setText(list.get(i).description)
     }
 
 }// Required empty public constructor

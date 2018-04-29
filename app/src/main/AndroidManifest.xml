@@ -48,7 +48,11 @@
             android:name=".activities.MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".activities.DishInfoActivity" />
-        <activity android:name=".activities.OrderActivity"></activity>
+        <activity android:name=".activities.OrderActivity" />
+        <activity
+            android:name=".activities.TabActivity"
+            android:label="@string/title_activity_tab"
+            android:theme="@style/Theme.AppTheme.Light.NoActionBar"></activity>
     </application>
 
 </manifest>

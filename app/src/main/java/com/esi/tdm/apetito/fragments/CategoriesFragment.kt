@@ -25,7 +25,7 @@ class CategoriesFragment : Fragment() {
         var view = inflater!!.inflate(R.layout.fragment_categories, container, false)
         var listView = view.findViewById<ListView>(R.id.categoriesListView) as ListView
         var utils = Utils()
-        var categoriesAdapter = activity?.let { CategoriesAdapter(it,utils.populateCategories(5)) }
+        var categoriesAdapter = activity?.let { CategoriesAdapter(it,utils.populateCategories(activity!!)) }
         listView.adapter = categoriesAdapter
         listView.setOnItemClickListener{adapterView,view,i,l ->
 

@@ -11,10 +11,10 @@
         <ImageView
             android:id="@+id/dishImage"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="270dp"
             android:layout_alignParentTop="true"
             android:scaleType="fitXY"
-            android:src="@drawable/resto_2" />
+            android:src="@drawable/salade3" />
 
         <RelativeLayout
             android:layout_width="match_parent"

@@ -11,18 +11,21 @@ import com.esi.tdm.apetito.models.*
  */
 class Utils {
 
-    fun populateRestosData(i:Int):List<Restaurant>{
+    fun populateRestosData(_ctx: Context):List<Restaurant>{
         var list = mutableListOf<Restaurant>()
-        var image = R.drawable.ic_listimage
-        for (j in 0..i) list.add(Restaurant("Resto","ESI-OUEDSMAR", Position(5.5,5.5),"11:00am","11:00pm",4F ,image,"",""))
+        var images = arrayOf(R.drawable.ic_resto1,R.drawable.ic_resto2,R.drawable.ic_resto3,R.drawable.ic_resto4,R.drawable.ic_resto5)
+        var name  = _ctx?.resources.getStringArray(R.array.restaurants)
+        var adr =  _ctx?.resources.getStringArray(R.array.restaurantsAdr)
+        var ratings =  _ctx?.resources.getStringArray(R.array.restaurantsrating)
+        for (j in 0..images.size-1) list.add(Restaurant(name[j],adr[j], Position(5.5,5.5),"11:00am","11:00pm",ratings[j].toFloat() ,images[j],"",""))
         return list
     }
 
-    fun populateCategories(i:Int):List<Category>{
+    fun populateCategories(_ctx:Context):List<Category>{
         var list = mutableListOf<Category>()
-        var image = R.drawable.ic_listimage
-        var dishes = arrayOf(Dish("Plate 1","Description 1",99F,image),Dish("Plate 1","Description 1",99F,R.drawable.ic_listimage))
-        for (j in 0..i) list.add(Category("Categorie",image,dishes))
+        var images = arrayOf(R.drawable.ic_salade_cat,R.drawable.ic_plat_cat,R.drawable.ic_drink_cat,R.drawable.ic_dessert_cat,R.drawable.ic_vege_cat,R.drawable.ic_diabetic_cat)
+        var names = _ctx?.resources.getStringArray(R.array.categories)
+        for (i in 0..images.size-1) list.add(Category(names[i],images[i]))
         return list
     }
 
@@ -30,6 +33,23 @@ class Utils {
         var list = mutableListOf<Dish>()
         var image = R.drawable.resto_2
         for (j in 0..i) list.add(Dish("Plat ","description1",990F,image))
+        return list
+    }
+
+    fun populateDishesEntries(_ctx:Context):List<Dish>{
+        var list = mutableListOf<Dish>()
+        var images = arrayOf(R.drawable.salade1,R.drawable.salade2,R.drawable.salade3,R.drawable.salade4,R.drawable.salade5,R.drawable.salade6)
+        var names = _ctx?.resources.getStringArray(R.array.dishEntryName)
+        var prices = _ctx?.resources.getStringArray(R.array.dishPrice)
+        for(i in 0.. images.size-1) list.add(Dish(names[i],_ctx.resources.getString(R.string.dishDescription),prices[i].toFloat(),images[i]))
+        return list
+    }
+    fun populateDishesPlats(_ctx:Context):List<Dish>{
+        var list = mutableListOf<Dish>()
+        //var images = arrayOf(R.drawable.plat1,R.drawable.plat2,R.drawable.plat3,R.drawable.plat4,R.drawable.plat5,R.drawable.plat6)
+        var names = _ctx?.resources.getStringArray(R.array.dishName)
+        var prices = _ctx?.resources.getStringArray(R.array.dishPrice)
+        //for(i in 0.. images.size-1) list.add(Dish(names[i],_ctx.resources.getString(R.string.dishDescription),prices[i].toFloat(),images[i]))
         return list
     }
 

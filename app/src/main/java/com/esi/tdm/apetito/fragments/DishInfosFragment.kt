@@ -12,6 +12,7 @@ import android.widget.TextView
 import com.esi.tdm.apetito.R
 import kotlinx.android.synthetic.main.fragment_dish_infos.*
 import org.jetbrains.anko.db.INTEGER
+import org.jetbrains.anko.support.v4.act
 import org.jetbrains.anko.support.v4.toast
 
 
@@ -39,6 +40,7 @@ class DishInfosFragment : Fragment() {
             dishsNumber.text = (number+1).toString()
         })
         addToCart.setOnClickListener(View.OnClickListener {
+
             toast("Produit ajoutee au panier")
         })
         return view
