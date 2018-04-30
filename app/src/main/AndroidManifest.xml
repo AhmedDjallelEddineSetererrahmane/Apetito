@@ -14,7 +14,7 @@
     <application
         android:name=".Apetito"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_launcher_1"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -30,7 +30,7 @@
         </activity>
         <activity
             android:name=".activities.RestaurantActivity"
-            android:label="@string/title_activity_restaurant"
+            android:label="Apetito"
             android:theme="@style/Theme.AppTheme.Light.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

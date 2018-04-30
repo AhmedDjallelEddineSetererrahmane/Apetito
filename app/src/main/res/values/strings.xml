@@ -11,7 +11,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="copyright">"@Copyright 2017 Apetito</string>
+    <string name="copyright">"@Copyright 2018 Apetito</string>
 
 
     <string-array name="restaurants">
@@ -21,7 +21,21 @@
         <item>El Mat3am</item>
         <item>El khayma</item>
     </string-array>
+    <string-array name="restaurantsLat">
+        <item>36.19</item>
+        <item>36.1694</item>
+        <item>36.75</item>
+        <item>36.71</item>
+        <item>36.45</item>
+    </string-array>
 
+    <string-array name="restaurantsLng">
+        <item>5.41</item>
+        <item>1.2891</item>
+        <item>3.04</item>
+        <item>4.04</item>
+        <item>2.59</item>
+    </string-array>
     <string-array name="restaurantsAdr">
         <item>Setif Centre ville enface ain fouara</item>
         <item>Alger Centre</item>
@@ -102,6 +116,11 @@
         <item>Boisson 6</item>
     </string-array>
 
+    <string-array name="Binary">
+        <item>Binnaire 1</item>
+        <item>Binnaire 2</item>
+        <item>Binnaire 3</item>
+    </string-array>
 
     <string-array name="dishPrice">
         <item>550</item>

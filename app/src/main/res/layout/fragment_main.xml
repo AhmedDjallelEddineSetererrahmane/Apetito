@@ -14,9 +14,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nos Resraurants"
-            android:textColor="@color/mGrey"
+            android:textColor="@color/logInPrimaryDark"
             android:textSize="16sp"
-            android:layout_margin="12dp"/>
+            android:layout_margin="12dp"
+            android:fontFamily="@font/ralewaysemibold"/>
 
         <ListView
             android:id="@+id/restaurantList"

@@ -8,7 +8,7 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.esi.tdm.apetito.fragments.RestaurantInfo2Fragment">
+        tools:context="com.esi.tdm.apetito.fragments.RestaurantInfoFragment">
 
         <com.synnapps.carouselview.CarouselView
             android:id="@+id/restoCarousel"
@@ -94,7 +94,7 @@
                 android:text="Lorem ipsum dolor sit amet, qui ubique numquam fierent ad. Sed te erant nullam interpretariss tractatos disputando te pri. Has te timeam gubergren. Fierent patrioque eu usu."
                 android:textSize="16sp"
                 android:textColor="@color/mGrey"
-                android:fontFamily="@font/robotoregular"
+                android:fontFamily="@font/montserratlight"
                 />
 
             <RelativeLayout
@@ -121,7 +121,7 @@
                     android:layout_below="@+id/sp1"
                     android:layout_marginStart="14dp"
                     android:layout_toEndOf="@+id/sp1"
-                    android:fontFamily="@font/robotoregular"
+                    android:fontFamily="@font/poppinsregular"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:gravity="center_vertical|center_horizontal"
@@ -145,7 +145,8 @@
                         android:text="Position du restaurant sur la MAP"
                         android:textAlignment="center"
                         android:textColor="@color/grey2"
-                        android:textSize="16dip" />
+                        android:textSize="16dip"
+                        android:fontFamily="@font/montserratlight"/>
 
                     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
                         xmlns:tools="http://schemas.android.com/tools"
@@ -201,7 +202,7 @@
                     android:textAlignment="gravity"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
-                    android:fontFamily="@font/robotoregular"
+                    android:fontFamily="@font/poppinsregular"
                     android:text="email@email.com"
                     android:id="@+id/email"
                     />
@@ -236,7 +237,7 @@
                     android:textAlignment="gravity"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
-                    android:fontFamily="@font/robotoregular"
+                    android:fontFamily="@font/poppinsregular"
                     android:text="0669408413"
                     android:id="@+id/phoneNumber"
                     />
@@ -269,3 +270,6 @@
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
+
+
+

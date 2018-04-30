@@ -29,31 +29,33 @@
                 android:layout_alignParentRight="true"
                 android:layout_margin="12dp"
                 android:background="@drawable/shape_2"
-                android:fontFamily="@font/robotobold"
+                android:fontFamily="@font/poppinsregular"
                 android:padding="10sp"
                 android:text="800 DA"
                 android:textColor="@color/mWhite"
                 android:textSize="22sp"
-                android:id="@+id/dishPriceDetail"/>
+                android:id="@+id/dishPriceDetail"
+                android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_margin="14dp"
-                android:fontFamily="@font/robotobold"
+                android:fontFamily="@font/poppinsregular"
                 android:padding="6sp"
                 android:text="Dish Name"
                 android:textColor="@android:color/black"
                 android:textSize="22sp"
-                android:id="@+id/dishNameDetail"/>
+                android:id="@+id/dishNameDetail"
+                android:textStyle="bold"/>
         </RelativeLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/layout1"
             android:layout_margin="16dp"
-            android:fontFamily="@font/robotoregular"
+            android:fontFamily="@font/montserratlight"
             android:padding="8sp"
             android:text="Lorem ipsum dolor sit amet, qui ubique numquam fierent ad. Sed te erant nullam interpretariss tractatos disputando te pri. Has te timeam gubergren. Fierent patrioque eu usu."
             android:textColor="@color/divider"
@@ -136,7 +138,7 @@
                 android:layout_margin="8dp"
                 android:layout_weight="3"
                 android:background="@drawable/shape_4"
-                android:fontFamily="@font/robotobold"
+                android:fontFamily="@font/poppinsregular"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="ADD TO CART"
                 android:textAlignment="gravity"

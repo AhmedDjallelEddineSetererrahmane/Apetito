@@ -3,6 +3,7 @@ package com.esi.tdm.apetito.adapters
 import android.content.Context
 import android.graphics.BitmapFactory
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,7 +36,8 @@ class CategoriesAdapter(_ctx: Context, _categoriesList:List<Category>):BaseAdapt
             view = LayoutInflater.from(ctx).inflate(R.layout.categorie_item_layout,p2,false)
             var image  = view?.findViewById<ImageView>(R.id.categoryImage) as ImageView
             var name = view?.findViewById<TextView>(R.id.categoryName) as TextView
-            viewHolder = CategoriesAdapter.ViewHolder(image, name)
+            var fav = view?.findViewById<ImageView>(R.id.fav) as ImageView
+            viewHolder = CategoriesAdapter.ViewHolder(image, name,fav)
             view.setTag(viewHolder)
         }else{
             viewHolder = view.getTag() as CategoriesAdapter.ViewHolder
@@ -49,9 +51,16 @@ class CategoriesAdapter(_ctx: Context, _categoriesList:List<Category>):BaseAdapt
         viewHolder.image.clipToOutline = true
         viewHolder.name.setText(categoriesList.get(p0).name)
 
+        if (categoriesList.get(p0).name=="Plats Vegetariens" || categoriesList.get(p0).name=="Plats Diabetiques"){
+            viewHolder.fav.setImageResource(R.drawable.ic_favorite_black_24dp)
+        }
+        else{
+            Log.e("h","hj")
+        }
+
         return view
     }
 
-    private data class ViewHolder(var image: ImageView, var name: TextView)
+    private data class ViewHolder(var image: ImageView, var name: TextView,var fav:ImageView)
 
 }

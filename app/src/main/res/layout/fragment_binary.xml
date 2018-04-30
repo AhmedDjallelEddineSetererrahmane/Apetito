@@ -1,13 +1,32 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.esi.tdm.apetito.fragments.BinaryFragment">
+    tools:context="com.esi.tdm.apetito.fragments.BinaryFragment"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Binary" />
+        android:layout_height="wrap_content"
+        android:text="Les Formules Binaires"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:gravity="center_vertical|center_horizontal"
+        android:textAlignment="gravity"
+        android:fontFamily="@font/ralewaysemibold"/>
 
-</FrameLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/mGreen" /><View
+    android:layout_width="match_parent"
+    android:layout_height="4dp"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/binaryDishes"
+        android:divider="@null"
+        android:layout_margin="8dp"
+        android:dividerHeight="10dp"></ListView>
+
+</LinearLayout>

@@ -29,7 +29,7 @@ class DrinksFragment : Fragment() {
         var view =  inflater!!.inflate(R.layout.fragment_drinks, container, false)
         var listView = view.findViewById<ListView>(R.id.drinks) as ListView
         var utils = Utils()
-        var adapter = activity?.let { DishesAdapter(it,utils.populateDishes(8)) }
+        var adapter = activity?.let { DishesAdapter(it,utils.populateDishesDrinks(activity!!)) }
         listView.adapter = adapter
 
         listView.setOnItemClickListener{adapterView,view,i,l ->
@@ -40,6 +40,7 @@ class DrinksFragment : Fragment() {
             else{
                 val intent = Intent(activity , DishInfoActivity::class.java)
                 intent.putExtra("index",i)
+                intent.putExtra("position",2)
                 startActivity(intent)
             }
         }

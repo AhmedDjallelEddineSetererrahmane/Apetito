@@ -13,7 +13,7 @@
         android:textColor="@android:color/black"
         android:gravity="center_vertical|center_horizontal"
         android:textAlignment="gravity"
-        android:fontFamily="@font/robotobold"/>
+        android:fontFamily="@font/ralewaysemibold"/>
 
     <View
         android:layout_width="match_parent"
@@ -22,12 +22,16 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:id="@+id/dayMenu"
         >
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/resto_2"
+            android:src="@drawable/lunch"
             android:scaleType="fitXY"
             android:id="@+id/dishImageList"/>
 
@@ -40,7 +44,7 @@
             android:text="Menu du Jour"
             android:textColor="@color/mWhite"
             android:textSize="24sp"
-            android:fontFamily="@font/robotobold"/>
+            android:fontFamily="@font/poppinsregular"/>
     </FrameLayout>
 
     <View

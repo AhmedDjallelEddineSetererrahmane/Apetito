@@ -28,7 +28,7 @@
             android:layout_marginBottom="16dp"
             android:textColor="@color/mWhite"
             android:layout_gravity="top|right"
-            android:fontFamily="@font/robotobold"
+            android:fontFamily="@font/ralewaysemibold"
             android:id="@+id/dishPrice"
             />
 
@@ -42,8 +42,10 @@
             android:text="Dish Name"
             android:textColor="@color/mWhite"
             android:textSize="24sp"
-            android:fontFamily="@font/robotobold"
-            android:id="@+id/dishName"/>
+            android:fontFamily="@font/poppinsregular"
+            android:textStyle="bold"
+            android:id="@+id/dishName"
+            />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

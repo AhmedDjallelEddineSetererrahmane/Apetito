@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="9dp"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/salade2"
+                android:scaleType="fitXY"
+                android:id="@+id/dish1ImageList"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_3"
+                android:layout_gravity="bottom"
+                android:paddingLeft="6dp"
+                android:text="Dish Name"
+                android:textColor="@color/mWhite"
+                android:textSize="24sp"
+                android:fontFamily="@font/poppinsregular"
+                android:id="@+id/dish1Name"
+                android:textStyle="bold"/>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="9dp"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/salade2"
+                android:scaleType="fitXY"
+                android:id="@+id/dish2ImageList"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_3"
+                android:layout_gravity="bottom"
+                android:paddingLeft="6dp"
+                android:text="Dish Name"
+                android:textColor="@color/mWhite"
+                android:textSize="24sp"
+                android:fontFamily="@font/poppinsregular"
+                android:id="@+id/dish2Name"
+                android:textStyle="bold"/>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_margin="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_7"
+        android:padding="4dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Formule Binaire 1"
+            android:textSize="24dp"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/ralewaysemibold"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/binaryName"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:background="@drawable/shape_2"
+            android:layout_height="wrap_content"
+            android:text="900 Da"
+            android:padding="4dp"
+            android:textSize="20dp"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/ralewaysemibold"
+            android:layout_alignParentRight="true"
+            android:id="@+id/binaryPrice"/>
+    </RelativeLayout>
+
+</LinearLayout>

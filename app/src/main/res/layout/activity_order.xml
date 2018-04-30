@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.esi.tdm.apetito.activities.OrderActivity">
+    tools:context="com.esi.tdm.apetito.activities.OrderActivity"
+    android:background="@color/grey3">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +27,8 @@
                 android:textAlignment="center"
                 android:textColor="@color/mGreen"
                 android:textSize="28dip"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:fontFamily="@font/ralewaysemibold"/>
         </LinearLayout>
 
         <EditText
@@ -42,7 +44,8 @@
             android:paddingLeft="20dip"
             android:textColor="@color/logInPrimaryDark"
             android:textColorHint="#848282"
-            android:textSize="23dip" />
+            android:textSize="23dip"
+            android:fontFamily="@font/poppinsregular"/>
 
         <EditText
             android:id="@+id/userAdr"
@@ -57,7 +60,8 @@
             android:paddingLeft="20dip"
             android:textColor="@color/logInPrimaryDark"
             android:textColorHint="#848282"
-            android:textSize="23dip" />
+            android:textSize="23dip"
+            android:fontFamily="@font/poppinsregular"/>
 
         <EditText
             android:id="@+id/note1"
@@ -72,7 +76,8 @@
             android:paddingLeft="20dip"
             android:textColor="@color/logInPrimaryDark"
             android:textColorHint="#848282"
-            android:textSize="23dip" />
+            android:textSize="23dip"
+            android:fontFamily="@font/poppinsregular"/>
 
 
         <Button
@@ -86,7 +91,8 @@
             android:text="Passer la commande"
             android:textColor="@color/mWhite"
             android:textSize="20dip"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="@font/montserratlight"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -100,7 +106,8 @@
                 android:text="@string/copyright"
                 android:textAlignment="center"
                 android:textColor="@color/mGreen"
-                android:textSize="16dip" />
+                android:textSize="16dip"
+                android:fontFamily="@font/montserratlight"/>
 
         </LinearLayout>
     </LinearLayout>

@@ -33,7 +33,7 @@ class AllDishesFragment : Fragment() {
         var view = inflater!!.inflate(R.layout.fragment_all_dishes, container, false)
         var listView = view.findViewById<ListView>(R.id.allDishes) as ListView
         var utils = Utils()
-        var adapter = activity?.let { DishesAdapter(it,utils.populateDishes(8)) }
+        var adapter = activity?.let { DishesAdapter(it,utils.populateDishes(activity!!)) }
         listView.adapter = adapter
 
         listView.setOnItemClickListener{adapterView,view,i,l ->
@@ -43,6 +43,7 @@ class AllDishesFragment : Fragment() {
             else{
                 val intent = Intent(activity , DishInfoActivity::class.java)
                 intent.putExtra("index",i)
+                intent.putExtra("position",6)
                 startActivity(intent)
             }
         }
