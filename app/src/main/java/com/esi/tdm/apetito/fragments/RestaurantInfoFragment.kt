@@ -1,18 +1,17 @@
 package com.esi.tdm.apetito.fragments
 
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v4.widget.DrawerLayout
-import android.support.v7.app.ActionBarDrawerToggle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toolbar
 
 import com.esi.tdm.apetito.R
+import com.esi.tdm.apetito.models.Position
 import com.esi.tdm.apetito.utlis.Utils
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -22,21 +21,20 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.synnapps.carouselview.CarouselView
 import com.synnapps.carouselview.ImageListener
-import kotlinx.android.synthetic.main.activity_restaurant.*
-import kotlinx.android.synthetic.main.fragment_restaurant_info.*
-import org.jetbrains.anko.sdk25.coroutines.onClick
 import org.jetbrains.anko.support.v4.email
 import org.jetbrains.anko.support.v4.makeCall
-import org.jetbrains.anko.support.v4.toast
 
 
+@SuppressLint("ValidFragment")
 /**
  * A simple [Fragment] subclass.
  */
-class RestaurantInfoFragment : Fragment() ,OnMapReadyCallback{
+class RestaurantInfoFragment(position: Int) : Fragment() ,OnMapReadyCallback{
 
 
+    var position = position
     var restaurantImages = arrayOf(R.drawable.resto_1,R.drawable.resto_2,R.drawable.resto_3)
+    var geo = Position(0.0,0.0)
     private lateinit var mMap: GoogleMap
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -45,13 +43,23 @@ class RestaurantInfoFragment : Fragment() ,OnMapReadyCallback{
         var carouselView = view.findViewById<CarouselView>(R.id.restoCarousel) as CarouselView
         carouselView.pageCount = restaurantImages.size
         carouselView.setImageListener(imageListener)
+        var utils = Utils()
+        var list = utils.populateRestosData(activity!!)
+
+
+        var restoName = view.findViewById<TextView>(R.id.restoName) as TextView
+        var restoADR1  = view.findViewById<TextView>(R.id.restoADR1) as TextView
+        var restoRate = view.findViewById<TextView>(R.id.restoRate) as TextView
+
+        restoName.setText(list[position].name)
+        restoADR1.setText(list[position].adr)
+        restoRate.setText(list[position].rating.toString())
         var facebook = view.findViewById<ImageView>(R.id.facebook) as ImageView
         var twitter = view.findViewById<ImageView>(R.id.twitter) as ImageView
         var email = view.findViewById<TextView>(R.id.email) as TextView
         var phone = view.findViewById<TextView>(R.id.phoneNumber) as TextView
 
 
-        var utils = Utils()
         val facebookUrl  = "fb://page/218641444910278"
         var twitterUrl = "twitter://user?user_id=382267114"
         facebook.setOnClickListener(View.OnClickListener {
@@ -68,6 +76,7 @@ class RestaurantInfoFragment : Fragment() ,OnMapReadyCallback{
             email(email.text.toString(),"Commande","")
         })
 
+         geo = list[position].geoPosition
 
         val mapFragment = childFragmentManager
                 .findFragmentById(R.id.map1) as SupportMapFragment
@@ -82,7 +91,7 @@ class RestaurantInfoFragment : Fragment() ,OnMapReadyCallback{
         mMap = p0
 
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
+        val sydney = LatLng(geo.latitude, geo.longitude)
         mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }

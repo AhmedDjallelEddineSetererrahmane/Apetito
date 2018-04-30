@@ -44,15 +44,12 @@ class CartAdapter(_ctx: Context, _cartItems:List<CartItem>): BaseAdapter() {
             viewHolder = view.getTag() as CartAdapter.ViewHolder
         }
 
-        var bitmap = BitmapFactory.decodeResource(ctx.resources, cartItems.get(p0).dishImage)
-        var round = RoundedBitmapDrawableFactory.create(ctx.resources,bitmap)
-        round.cornerRadius = 3F
-        //viewHolder.image.setImageResource(restosList.get(p0).listImage)
-        viewHolder.image.setImageDrawable(round)
+        viewHolder.image.setImageDrawable(cartItems.get(p0).dishImage)
         viewHolder.image.clipToOutline = true
         viewHolder.name.setText(cartItems.get(p0).dishName)
         viewHolder.qty.setText("Quanity : "+cartItems.get(p0).quantity.toString())
         viewHolder.totalPrice.setText(cartItems.get(p0).totalPrice.toString())
+
 
         return view
     }

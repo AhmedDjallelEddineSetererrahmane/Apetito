@@ -47,17 +47,18 @@
                 android:background="@color/mGreen"
                 app:srcCompat="@drawable/ic_location" />
 
-            <TextView
+            <EditText
                 android:id="@+id/searchtext"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
                 android:layout_weight="4"
-                android:fontFamily="@font/robotobold"
+                android:fontFamily="@font/poppinsregular"
                 android:text="Chercher un Restaurant"
                 android:textColor="@color/mGrey"
-                android:textSize="16sp" />
+                android:textSize="14sp"
+                />
 
             <ImageView
                 android:layout_width="0dip"
@@ -83,14 +84,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nos Resraurants"
-            android:textColor="@color/mGrey"
+            android:textColor="@color/logInPrimaryDark"
             android:textSize="16sp"
-            android:layout_margin="12dp"/>
+            android:layout_margin="12dp"
+            android:fontFamily="@font/poppinsregular"
+            android:textStyle="bold"/>
 
         <ListView
             android:id="@+id/restaurantList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:divider="@android:color/transparent"
             android:dividerHeight="15dp"></ListView>
     </LinearLayout>

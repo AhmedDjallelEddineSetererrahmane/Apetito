@@ -18,9 +18,15 @@ class DishInfoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_dish_info)
 
         position = intent.getIntExtra("index",0)
-        categorie = intent.getIntExtra("categorie",0)
+        categorie = intent.getIntExtra("position",0)
         var utils = Utils()
         when(categorie){
+            -1->{
+                dishImage.setImageResource(R.drawable.lunch)
+                dishPriceDetail.setText("2500")
+                dishNameDetail.setText("Saumon Royale")
+                dishDescription.setText(resources.getString(R.string.dishDescription))
+            }
             0->{
                 list = utils.populateDishesEntries(this) as MutableList<Dish>
                 dishImage.setImageResource(list.get(position).listImage)
@@ -30,18 +36,46 @@ class DishInfoActivity : AppCompatActivity() {
 
             }
             1->{
+                list = utils.populateDishesPlats(this) as MutableList<Dish>
+                dishImage.setImageResource(list.get(position).listImage)
+                dishPriceDetail.setText(list.get(position).price.toString())
+                dishNameDetail.setText(list.get(position).name)
+                dishDescription.setText(list.get(position).description)
             }
             2->{
-
+                list = utils.populateDishesDrinks(this) as MutableList<Dish>
+                dishImage.setImageResource(list.get(position).listImage)
+                dishPriceDetail.setText(list.get(position).price.toString())
+                dishNameDetail.setText(list.get(position).name)
+                dishDescription.setText(list.get(position).description)
             }
             3->{
-
+                list = utils.populateDishesDesserts(this) as MutableList<Dish>
+                dishImage.setImageResource(list.get(position).listImage)
+                dishPriceDetail.setText(list.get(position).price.toString())
+                dishNameDetail.setText(list.get(position).name)
+                dishDescription.setText(list.get(position).description)
             }
             4->{
-
+                list = utils.populateDishesVege(this) as MutableList<Dish>
+                dishImage.setImageResource(list.get(position).listImage)
+                dishPriceDetail.setText(list.get(position).price.toString())
+                dishNameDetail.setText(list.get(position).name)
+                dishDescription.setText(list.get(position).description)
             }
             5->{
-
+                list = utils.populateDishesDiab(this) as MutableList<Dish>
+                dishImage.setImageResource(list.get(position).listImage)
+                dishPriceDetail.setText(list.get(position).price.toString())
+                dishNameDetail.setText(list.get(position).name)
+                dishDescription.setText(list.get(position).description)
+            }
+            6->{
+                list = utils.populateDishes(this) as MutableList<Dish>
+                dishImage.setImageResource(list.get(position).listImage)
+                dishPriceDetail.setText(list.get(position).price.toString())
+                dishNameDetail.setText(list.get(position).name)
+                dishDescription.setText(list.get(position).description)
             }
         }
 

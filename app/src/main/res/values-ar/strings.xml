@@ -1,0 +1,151 @@
+<resources>
+    <string name="app_name">Apetito</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_restaurant">RestaurantActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="copyright">"2018 Apetito الحقوق محفوظة</string>
+
+
+    <string-array name="restaurants">
+        <item>Mi Gusto</item>
+        <item>Mahboull</item>
+        <item>Majnouna</item>
+        <item>El Mat3am</item>
+        <item>El khayma</item>
+    </string-array>
+    <string-array name="restaurantsLat">
+        <item>36.19</item>
+        <item>36.1694</item>
+        <item>36.75</item>
+        <item>36.71</item>
+        <item>36.45</item>
+    </string-array>
+
+    <string-array name="restaurantsLng">
+        <item>5.41</item>
+        <item>1.2891</item>
+        <item>3.04</item>
+        <item>4.04</item>
+        <item>2.59</item>
+    </string-array>
+    <string-array name="restaurantsAdr">
+        <item>Setif Centre ville enface ain fouara</item>
+        <item>Alger Centre</item>
+        <item>Zeboudja en face le stade</item>
+        <item>Tizi ouzou Centre ville</item>
+        <item>Dali Brahim</item>
+    </string-array>
+    <string-array name="restaurantsrating">
+        <item>4.9</item>
+        <item>3.8</item>
+        <item>4.3</item>
+        <item>4.7</item>
+        <item>4.3</item>
+    </string-array>
+
+    <string-array name="categories">
+        <item>مقبلات</item>
+        <item>اطباق رئيسية</item>
+        <item>مشروبات</item>
+        <item>الحلويات</item>
+        <item>أطباق نباتية</item>
+        <item>أطباق السكري</item>
+    </string-array>
+
+
+    <string-array name="dishEntryName">
+        <item>مقبلة 1</item>
+        <item>مقبلة 2</item>
+        <item>مقبلة 3</item>
+        <item>مقبلة 4</item>
+        <item>مقبلة 5</item>
+        <item>مقبلة 6</item>
+
+    </string-array>
+
+    <string-array name="dishName">
+        <item>الطبق 1</item>
+        <item>الطبق 2</item>
+        <item>الطبق 3</item>
+        <item>الطبق 4</item>
+        <item>الطبق 5</item>
+        <item>الطبق 6</item>
+    </string-array>
+
+    <string-array name="vegitarianName">
+        <item>الطبق 1</item>
+        <item>الطبق 2</item>
+        <item>الطبق 3</item>
+        <item>الطبق 4</item>
+        <item>الطبق 5</item>
+        <item>الطبق 6</item>
+    </string-array>
+
+    <string-array name="diabetiquesName">
+        <item>الطبق 1</item>
+        <item>الطبق 2</item>
+        <item>الطبق 3</item>
+        <item>الطبق 4</item>
+        <item>الطبق 5</item>
+        <item>الطبق 6</item>
+    </string-array>
+
+    <string-array name="dessertsName">
+        <item>الحلوى 1</item>
+        <item>الحلوى 2</item>
+        <item>الحلوى 3</item>
+        <item>الحلوى 4</item>
+        <item>الحلوى 5</item>
+        <item>الحلوى 6</item>
+    </string-array>
+
+    <string-array name="drinksName">
+        <item>مشروب 1</item>
+        <item>مشروب 2</item>
+        <item>مشروب 3</item>
+        <item>مشروب 4</item>
+        <item>مشروب 5</item>
+        <item>مشروب 6</item>
+    </string-array>
+
+    <string-array name="Binary">
+        <item>Binnaire 1</item>
+        <item>Binnaire 2</item>
+        <item>Binnaire 3</item>
+    </string-array>
+
+    <string-array name="dishPrice">
+        <item>550</item>
+        <item>750</item>
+        <item>1000</item>
+        <item>1200</item>
+        <item>800</item>
+        <item>950</item>
+    </string-array>
+
+    <string-array name="cartItemDishNames">
+
+    </string-array>
+    <string-array name="cartItemDishPrice">
+
+    </string-array>
+    <string-array name="cartItemDishQuantity">
+
+    </string-array>
+    <string-array name="cartItemDishImage">
+
+    </string-array>
+
+    <string name="dishDescription">Lorem ipsum dolor sit amet, qui ubique numquam fierent ad. Sed te erant nullam interpretariss tractatos disputando te pri. Has te timeam gubergren. Fierent patrioque eu usu.</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_tab">TabActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+</resources>

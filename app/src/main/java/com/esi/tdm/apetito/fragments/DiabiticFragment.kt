@@ -29,7 +29,7 @@ class DiabiticFragment : Fragment() {
         var view =  inflater!!.inflate(R.layout.fragment_diabitic, container, false)
         var listView = view.findViewById<ListView>(R.id.diabitic) as ListView
         var utils = Utils()
-        var adapter = activity?.let { DishesAdapter(it,utils.populateDishes(8)) }
+        var adapter = activity?.let { DishesAdapter(it,utils.populateDishesDiab(activity!!)) }
         listView.adapter = adapter
 
         listView.setOnItemClickListener{adapterView,view,i,l ->
@@ -40,6 +40,7 @@ class DiabiticFragment : Fragment() {
             else{
                 val intent = Intent(activity , DishInfoActivity::class.java)
                 intent.putExtra("index",i)
+                intent.putExtra("position",5)
                 startActivity(intent)
             }
         }

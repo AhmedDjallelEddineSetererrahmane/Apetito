@@ -47,7 +47,7 @@
                 android:textColor="@android:color/black"
                 android:gravity="center_vertical|center_horizontal"
                 android:textAlignment="gravity"
-                android:fontFamily="@font/robotobold"/>
+                android:fontFamily="@font/ralewaysemibold"/>
 
             <View
                 android:layout_width="match_parent"

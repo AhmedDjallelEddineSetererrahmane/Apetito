@@ -14,7 +14,7 @@
             android:textColor="@android:color/black"
             android:gravity="center_vertical|center_horizontal"
             android:textAlignment="gravity"
-            android:fontFamily="@font/robotobold"/>
+            android:fontFamily="@font/ralewaysemibold"/>
 
         <View
             android:layout_width="match_parent"
@@ -44,11 +44,13 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
+            android:id="@+id/totalAmount"
             android:text="total de la commande : 1000 DA"
             android:gravity="center_vertical"
             android:textSize="16sp"
             android:layout_marginLeft="6dp"
             android:textColor="@color/logInPrimaryDark"
+            android:fontFamily="@font/poppinsregular"
             />
         <Button
             android:id="@+id/orderBtn"
@@ -62,7 +64,8 @@
             android:textColor="@color/mWhite"
             android:textSize="14dip"
             android:textStyle="bold"
-            android:layout_margin="6dp"/>
+            android:layout_margin="6dp"
+            android:fontFamily="@font/poppinsregular"/>
     </LinearLayout>
 
 </RelativeLayout>

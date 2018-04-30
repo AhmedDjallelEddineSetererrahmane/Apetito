@@ -1,21 +1,18 @@
 package com.esi.tdm.apetito.activities
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
+import android.widget.TextView
 import com.esi.tdm.apetito.R
 import com.esi.tdm.apetito.fragments.*
 import com.esi.tdm.apetito.utlis.Utils
 import kotlinx.android.synthetic.main.activity_restaurant.*
 import kotlinx.android.synthetic.main.app_bar_restaurant.*
-import kotlinx.android.synthetic.main.fragment_restaurant_info.*
-import org.jetbrains.anko.toast
 
 class RestaurantActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -36,17 +33,13 @@ class RestaurantActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         toggle.syncState()
 
 
-        supportFragmentManager.beginTransaction()
-                .replace(R.id.mainFrame,RestaurantInfoFragment())
-                .commit()
-        nav_view.setNavigationItemSelectedListener(this)
         position = intent.getIntExtra("pos",0)
 
-        //var utils = Utils()
-        //var list = utils.populateRestosData(this)
-        //restoName.setText(list[position].name)
-        //restoADR1.setText(list[position].adr)
-        //restoRate.setText(list[position].rating.toString())
+        supportFragmentManager.beginTransaction()
+                .replace(R.id.mainFrame,RestaurantInfoFragment(position))
+                .commit()
+        nav_view.setNavigationItemSelectedListener(this)
+
     }
 
     override fun onBackPressed() {
@@ -78,7 +71,7 @@ class RestaurantActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         when (item.itemId) {
             R.id.home -> {
                 supportFragmentManager.beginTransaction()
-                        .replace(R.id.mainFrame,RestaurantInfoFragment())
+                        .replace(R.id.mainFrame,RestaurantInfoFragment(position))
                         .commit()
             }
             R.id.categorie -> {

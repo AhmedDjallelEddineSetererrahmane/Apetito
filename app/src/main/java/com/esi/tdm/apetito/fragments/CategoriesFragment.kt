@@ -1,15 +1,18 @@
 package com.esi.tdm.apetito.fragments
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.ListView
 import android.widget.Switch
 
 import com.esi.tdm.apetito.R
+import com.esi.tdm.apetito.activities.DishInfoActivity
 import com.esi.tdm.apetito.adapters.CategoriesAdapter
 import com.esi.tdm.apetito.utlis.Utils
 
@@ -24,6 +27,7 @@ class CategoriesFragment : Fragment() {
         // Inflate the layout for this fragment
         var view = inflater!!.inflate(R.layout.fragment_categories, container, false)
         var listView = view.findViewById<ListView>(R.id.categoriesListView) as ListView
+        var dayMenu = view.findViewById<View>(R.id.dayMenu) as FrameLayout
         var utils = Utils()
         var categoriesAdapter = activity?.let { CategoriesAdapter(it,utils.populateCategories(activity!!)) }
         listView.adapter = categoriesAdapter
@@ -51,6 +55,12 @@ class CategoriesFragment : Fragment() {
 
             }
         }
+
+        dayMenu.setOnClickListener(View.OnClickListener {
+            val intent = Intent(activity , DishInfoActivity::class.java)
+            intent.putExtra("position",-1)
+            startActivity(intent)
+        })
         return view
     }
 

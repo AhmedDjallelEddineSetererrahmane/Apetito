@@ -42,7 +42,7 @@ class EntriesFragmentFragment : Fragment() {
             else{
                 val intent = Intent(activity , DishInfoActivity::class.java)
                 intent.putExtra("index",i)
-                intent.putExtra("category",0)
+                intent.putExtra("position",0)
                 startActivity(intent)
             }
         }

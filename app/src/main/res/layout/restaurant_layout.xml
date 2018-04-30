@@ -45,7 +45,8 @@
             app:cardCornerRadius="6dp"
             app:cardElevation="5dp"
             app:layout_constraintVertical_bias="0.0"
-            android:layout_marginBottom="6dp">
+            android:layout_marginBottom="6dp"
+            android:background="@color/mWhite">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -60,10 +61,13 @@
                     android:layout_height="0dp"
                     android:layout_marginLeft="8dp"
                     android:layout_weight="2"
+                    android:layout_marginTop="8dp"
                     android:text="Restaurant Name"
                     android:textColor="@android:color/black"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/ralewaysemibold"
+                    />
 
                 <TextView
                     android:id="@+id/restaurantAdr"
@@ -73,7 +77,8 @@
                     android:layout_weight="1"
                     android:text="Cite 250 logts"
                     android:textColor="@color/mGrey"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:fontFamily="@font/montserratlight"/>
 
                 <TextView
                     android:id="@+id/restaurantOpening"
@@ -83,7 +88,8 @@
                     android:layout_weight="1"
                     android:text="11:00am-11:00pm"
                     android:textColor="@color/mGrey"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:fontFamily="@font/montserratlight"/>
 
             </LinearLayout>
 
@@ -107,7 +113,8 @@
         app:layout_constraintLeft_toRightOf="@+id/mLayout"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/mLayout"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintVertical_bias="0.4"
+        android:fontFamily="@font/ralewaysemibold"/>
 
 
 

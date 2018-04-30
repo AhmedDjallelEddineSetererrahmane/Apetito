@@ -6,19 +6,20 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Acceuil" />
+            android:icon="@drawable/ic_store_black_24dp"
+            android:title="Acceuil"
+            />
         <item
             android:id="@+id/categorie"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_room_service_black_24dp"
             android:title="Catégorie" />
         <item
             android:id="@+id/allDishes"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_restaurant_menu_black_24dp"
             android:title="Tous les plats" />
         <item
             android:id="@+id/binary"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_restaurant_black_24dp"
             android:title="Les Formules Binaire" />
     </group>
 
@@ -26,12 +27,12 @@
         <menu>
             <item
                 android:id="@+id/basket"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/ic_shopping_cart_black_24dp"
                 android:title="Mon Panier" />
             <item
                 android:id="@+id/reserv"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Reserver un table" />
+                android:icon="@drawable/ic_event_seat_black_24dp"
+                android:title="Mes Reservations" />
         </menu>
     </item>
 
