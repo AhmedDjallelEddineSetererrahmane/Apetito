@@ -5,6 +5,7 @@ import android.arch.lifecycle.ViewModel
 import android.support.v4.content.ContextCompat.startActivity
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.esi.tdm.apetito.Database.RoomService
@@ -16,6 +17,8 @@ import com.esi.tdm.apetito.retrofit.RetrofitService
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.toast
+
+import org.jetbrains.anko.info
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -46,32 +49,33 @@ class RestaurantViewModel:ViewModel() {
     }
 
     private fun getRestaurantsFromRemote(act:Activity ) {
-//        Log.d("FETCH","begin fetching ...")
-//        val call = RetrofitService.RestaurantEndpoint.getRestaurants()
-//        call.enqueue(object : Callback<List<Restaurant>> {
-//            override fun onResponse(call: Call<List<Restaurant>>?, response: Response<List<Restaurant>>?) {
-//                act.progressBarRestaurant.visibility = View.GONE
-//                if (response?.isSuccessful!!) {
-//                    restaurants = response?.body()
-//                    Log.d("FETCH",restaurants.toString())
-//                    act.progressBarRestaurant.visibility = View.GONE
-//                    act.restaurantList.adapter = RestaurantAdapter(act, restaurants!!)
-//                    // save cities in SQLite DB
-//                    val db = RoomService.getInstance(act)
-//
-//                    restaurants = db?.getRestaurantDao()?.getRestaurants()
-//                } else {
-//                    act.toast("Une erreur s'est produite")
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<List<Restaurant>>?, t: Throwable?) {
-//                act.progressBarRestaurant.visibility = View.GONE
-//                act.toast("Une erreur s'est produite")
-//            }
-//
-//
-//        })
+        act.toast("IN")
+        val call = RetrofitService.RestaurantEndpoint.getRestaurants()
+        call.enqueue(object : Callback<List<Restaurant>> {
+            override fun onResponse(call: Call<List<Restaurant>>?, response: Response<List<Restaurant>>?) {
+
+                act.progressBarRestaurant.visibility = View.GONE
+                if (response?.isSuccessful!!) {
+                    restaurants = response?.body()
+                    Log.d("FETCH",restaurants.toString())
+                    act.progressBarRestaurant.visibility = View.GONE
+                    act.restaurantList.adapter = RestaurantAdapter(act, restaurants!!)
+                    // save cities in SQLite DB
+                    val db = RoomService.getInstance(act)
+
+                    restaurants = db?.getRestaurantDao()?.getRestaurants()
+                } else {
+                    act.toast("Une erreur s'est produite")
+                }
+            }
+
+            override fun onFailure(call: Call<List<Restaurant>>?, t: Throwable?) {
+                act.progressBarRestaurant.visibility = View.GONE
+                act.toast("Une erreur s'est produite")
+            }
+
+
+        })
     }
 
     fun loadDetail(act:Activity, restaurant: Restaurant) {
