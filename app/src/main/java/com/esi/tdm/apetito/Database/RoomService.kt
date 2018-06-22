@@ -6,10 +6,27 @@ import android.content.Context
 object RoomService {
 
 
-    lateinit var context : Context
+//    lateinit var context : Context
+//
+//    val appDataBase: AppDataBase by lazy {
+//        Room.databaseBuilder(context,AppDataBase::class.java,"dbapetito").allowMainThreadQueries().build()
+//    }
+    private var INSTANCE: AppDataBase? = null
 
-    val appDataBase: AppDataBase by lazy {
-        Room.databaseBuilder(context!!,AppDataBase::class.java,"dbapetito").allowMainThreadQueries().build()
+    fun getInstance(context: Context): AppDataBase? {
+        if (INSTANCE == null) {
+            synchronized(AppDataBase::class) {
+                INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
+                        AppDataBase::class.java, "dbapetito.db")
+                        .allowMainThreadQueries()
+                        .build()
+            }
+        }
+        return INSTANCE
+    }
+
+    fun destroyInstance() {
+        INSTANCE = null
     }
 
 }

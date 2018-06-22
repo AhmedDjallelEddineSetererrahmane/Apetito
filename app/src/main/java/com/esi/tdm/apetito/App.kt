@@ -6,6 +6,6 @@ import com.esi.tdm.apetito.Database.RoomService
 class App:Application(){
     override fun onCreate() {
         super.onCreate()
-        RoomService.context = applicationContext
+       // RoomService.context = applicationContext
     }
 }

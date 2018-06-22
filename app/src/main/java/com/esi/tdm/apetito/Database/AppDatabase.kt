@@ -2,7 +2,9 @@ package com.esi.tdm.apetito.Database
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.RoomDatabase
+import android.content.Context
 import com.esi.tdm.apetito.Dao.*
+
 import com.esi.tdm.apetito.Entity.*
 
 

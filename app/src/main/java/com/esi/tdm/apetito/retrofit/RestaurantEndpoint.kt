@@ -7,10 +7,10 @@ import retrofit2.http.Path
 
 interface RestaurantEndpoint {
 
-    @GET("layout/Restaurant/{id}")
+    @GET("Restaurant/{id}")
     fun getRestaurant(@Path("id") id: String):Call<Restaurant>
 
-    @GET("layout/Restaurant")
+    @GET("Restaurant")
     fun getRestaurants():Call<List<Restaurant>>
 
 }
