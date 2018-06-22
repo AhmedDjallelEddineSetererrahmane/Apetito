@@ -1,4 +1,4 @@
-package com.esi.tdm.apetito.adapters
+package com.esi.tdm.apetito.Adapter
 
 import android.content.Context
 import android.content.res.Resources
@@ -15,7 +15,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.esi.tdm.apetito.R
 import com.esi.tdm.apetito.config.baseUrl
-import com.esi.tdm.apetito.models.Restaurant
+import com.esi.tdm.apetito.Entity.Restaurant
 import org.w3c.dom.Text
 
 /**

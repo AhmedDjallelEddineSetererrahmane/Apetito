@@ -9,6 +9,9 @@ interface BinaryDao {
     @Query("select * from binaries")
     fun getBinaries():List<Binary>
 
+    @Query("select * from binaries where binary_id=:idBinary")
+    fun getBinaryById(idBinary:Int):Binary
+
     @Insert
     fun addPlayer(vararg binary: Binary)
 

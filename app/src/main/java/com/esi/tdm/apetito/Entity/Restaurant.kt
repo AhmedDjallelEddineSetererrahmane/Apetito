@@ -5,16 +5,18 @@ import android.arch.persistence.room.Entity
 import android.arch.persistence.room.ForeignKey
 import android.arch.persistence.room.PrimaryKey
 import android.support.annotation.ColorInt
-
+import java.io.Serializable
 
 
 @Entity(tableName = "restaurants",
         foreignKeys = arrayOf(ForeignKey(entity = Position::class,
-                parentColumns = arrayOf("id"),
+                parentColumns = arrayOf("position_id"),
                 childColumns = arrayOf("position_id"),
                 onDelete = ForeignKey.CASCADE)) )
 
-data class Restaurant(
+data class Restaurant(@PrimaryKey
+                      @ColumnInfo(name="restaurant_id")
+                      var idRestaurant:Int,
                       var name: String = "",
                       var adr: String = "",
                       @ColumnInfo(name = "position_id")
@@ -29,6 +31,4 @@ data class Restaurant(
                       var facebookUrl:String="",
                       @ColumnInfo(name = "twitter_url")
                       var twitterUrl:String=""
-) {
-    @PrimaryKey(autoGenerate = true) var id: Long?= null
-}
+) :Serializable

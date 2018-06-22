@@ -1,6 +1,7 @@
 package com.esi.tdm.apetito.Dao
 
 import android.arch.persistence.room.*
+import com.esi.tdm.apetito.Entity.CartItem
 import com.esi.tdm.apetito.Entity.Reservation
 
 @Dao
@@ -8,6 +9,10 @@ interface ReservationDao {
 
     @Query("select * from reservations")
     fun getReservations():List<Reservation>
+
+
+    @Query("select * from reservations where reservation_id=:idReservation")
+    fun getReservationById(idReservation:Int): Reservation
 
     @Insert
     fun addReservation(vararg reservation: Reservation)

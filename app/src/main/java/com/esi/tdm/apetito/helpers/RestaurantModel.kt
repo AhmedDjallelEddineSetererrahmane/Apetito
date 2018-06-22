@@ -8,6 +8,5 @@ import com.esi.tdm.apetito.models.Restaurant
  * Created by djall on 4/27/2018.
  */
 class RestaurantModel: ViewModel() {
-
     var restaurant:Restaurant = Restaurant()
 }
