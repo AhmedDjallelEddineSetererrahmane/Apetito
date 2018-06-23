@@ -13,9 +13,6 @@ import com.esi.tdm.apetito.R
 import com.esi.tdm.apetito.models.Dish
 import com.esi.tdm.apetito.models.Restaurant
 
-/**
- * Created by djall on 4/25/2018.
- */
 class DishesAdapter(_ctx: Context, _dishesList:List<Dish>):BaseAdapter() {
     var ctx = _ctx
     var dishesList = _dishesList

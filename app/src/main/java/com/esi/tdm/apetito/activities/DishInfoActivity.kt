@@ -8,7 +8,7 @@ import com.esi.tdm.apetito.utlis.Utils
 import kotlinx.android.synthetic.main.fragment_dish_infos.*
 import org.jetbrains.anko.toast
 
-class DishInfoActivity : AppCompatActivity() {
+class DishInfoActivity(dish :Dish) : AppCompatActivity() {
 
     var position:Int = 0
     var categorie:Int = 0

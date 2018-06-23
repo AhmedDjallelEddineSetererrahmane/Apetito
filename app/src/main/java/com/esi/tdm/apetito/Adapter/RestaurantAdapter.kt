@@ -19,9 +19,7 @@ import com.esi.tdm.apetito.Entity.Restaurant
 import com.esi.tdm.apetito.config.imageBaseUrl
 import org.w3c.dom.Text
 
-/**
- * Created by djall on 4/23/2018.
- */
+
 class RestaurantAdapter(_ctx:Context,_restosList:List<Restaurant>):BaseAdapter() {
 
     var ctx = _ctx

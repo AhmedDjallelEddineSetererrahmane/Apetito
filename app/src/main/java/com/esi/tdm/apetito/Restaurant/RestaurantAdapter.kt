@@ -53,7 +53,7 @@ class RestaurantAdapter(_ctx:Context,_restosList:List<Restaurant>):BaseAdapter()
 //        var bitmap = BitmapFactory.decodeResource(ctx.resources,restosList.get(p0).listImage)
 //        var round = RoundedBitmapDrawableFactory.create(ctx.resources,bitmap)
 //        round.cornerRadius = 7.5F
-        Glide.with(ctx).load(imageBaseUrl
+            Glide.with(ctx).load(imageBaseUrl
                 + restosList.get(p0).imageUrl)
 
                 .into(viewHolder.image)
