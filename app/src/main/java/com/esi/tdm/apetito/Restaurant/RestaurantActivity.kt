@@ -1,4 +1,4 @@
-package com.esi.tdm.apetito.activities
+package com.esi.tdm.apetito.Restaurant
 
 import android.os.Bundle
 import android.support.design.widget.NavigationView
@@ -7,9 +7,9 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.esi.tdm.apetito.Category.CategoriesFragment
 import com.esi.tdm.apetito.Entity.Restaurant
 import com.esi.tdm.apetito.R
-import com.esi.tdm.apetito.Restaurant.RestaurantInfoFragment
 import com.esi.tdm.apetito.fragments.*
 import kotlinx.android.synthetic.main.activity_restaurant.*
 import kotlinx.android.synthetic.main.app_bar_restaurant.*
@@ -77,7 +77,7 @@ class RestaurantActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
             }
             R.id.categorie -> {
                 supportFragmentManager.beginTransaction()
-                        .replace(R.id.mainFrame,CategoriesFragment())
+                        .replace(R.id.mainFrame, CategoriesFragment())
                         .commit()
             }
             R.id.allDishes -> {

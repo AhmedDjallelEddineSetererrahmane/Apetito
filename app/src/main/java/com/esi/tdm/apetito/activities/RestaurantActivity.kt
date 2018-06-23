@@ -1,6 +1,5 @@
 package com.esi.tdm.apetito.activities
 
-import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
@@ -8,12 +7,11 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.TextView
+import com.esi.tdm.apetito.Category.CategoriesFragment
 import com.esi.tdm.apetito.Entity.Restaurant
 import com.esi.tdm.apetito.R
+import com.esi.tdm.apetito.Restaurant.RestaurantInfoFragment
 import com.esi.tdm.apetito.fragments.*
-import com.esi.tdm.apetito.utlis.Utils
-import example.android.com.dataserverpersistance.viewmodel.RestaurantViewModel
 import kotlinx.android.synthetic.main.activity_restaurant.*
 import kotlinx.android.synthetic.main.app_bar_restaurant.*
 
@@ -40,7 +38,7 @@ class RestaurantActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
 
 
         supportFragmentManager.beginTransaction()
-                .replace(R.id.mainFrame,RestaurantInfoFragment(restaurant))
+                .replace(R.id.mainFrame, RestaurantInfoFragment(restaurant))
                 .commit()
         nav_view.setNavigationItemSelectedListener(this)
 
@@ -75,12 +73,12 @@ class RestaurantActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         when (item.itemId) {
             R.id.home -> {
                 supportFragmentManager.beginTransaction()
-                        .replace(R.id.mainFrame,RestaurantInfoFragment(restaurant))
+                        .replace(R.id.mainFrame, RestaurantInfoFragment(restaurant))
                         .commit()
             }
             R.id.categorie -> {
                 supportFragmentManager.beginTransaction()
-                        .replace(R.id.mainFrame,CategoriesFragment())
+                        .replace(R.id.mainFrame, CategoriesFragment())
                         .commit()
             }
             R.id.allDishes -> {

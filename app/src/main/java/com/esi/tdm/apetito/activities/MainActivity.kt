@@ -11,6 +11,7 @@ import android.widget.Toast
 import com.esi.tdm.apetito.Entity.Restaurant
 import com.esi.tdm.apetito.R
 import com.esi.tdm.apetito.Adapter.RestaurantAdapter
+import com.esi.tdm.apetito.Restaurant.RestaurantInfoFragment
 import com.esi.tdm.apetito.utlis.Utils
 import example.android.com.dataserverpersistance.viewmodel.RestaurantViewModel
 
@@ -56,10 +57,13 @@ class MainActivity : AppCompatActivity() {
 
         listView.setOnItemClickListener { adapterView, view, i, l ->
             val restaurant = (adapterView.getItemAtPosition(i) as Restaurant)
-            if (isTwoPane()) {
+            if (isTwoPane() ) {
 
                 Toast.makeText(this,"Show details ...",Toast.LENGTH_SHORT).show()
-                restaurantViewModel.loadDetail( this,restaurant)
+                //restaurantViewModel.loadDetail( this,restaurant)
+                restaurantViewModel.displayDatail(this,restaurantViewModel.restaurant!!)
+
+
             }
             else {
                 startActivity(intentFor<RestaurantActivity>("restaurant" to restaurant))

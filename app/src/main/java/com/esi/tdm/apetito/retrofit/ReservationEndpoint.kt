@@ -12,7 +12,7 @@ import retrofit2.http.Path
 interface ReservationEndpoint {
 
     @GET("Reservation/{id}")
-    fun getReservation(@Path("id") id: Long):Call<Reservation>
+    fun getReservation(@Path("id") id: Int):Call<Reservation>
 
     @GET("Reservation")
     fun getReservation():Call<List<Reservation>>

@@ -8,7 +8,7 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.esi.tdm.apetito.fragments.RestaurantInfoFragment">
+        tools:context="com.esi.tdm.apetito.Restaurant.RestaurantInfoFragment">
 
         <com.synnapps.carouselview.CarouselView
             android:id="@+id/restoCarousel"
@@ -151,7 +151,7 @@
                         android:layout_height="300dip"
                         android:layout_marginLeft="16dip"
                         android:layout_marginRight="16dip"
-                        tools:context="com.esi.tdm.apetito.fragments.RestaurantInfoFragment"
+                        tools:context="com.esi.tdm.apetito.Restaurant.RestaurantInfoFragment"
                         map:cameraBearing="112.5"
                         map:cameraTargetLat="-33.796923"
                         map:cameraTargetLng="150.922433"

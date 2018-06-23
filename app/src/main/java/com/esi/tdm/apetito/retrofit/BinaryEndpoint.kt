@@ -10,7 +10,7 @@ import retrofit2.http.Path
 interface BinaryEndpoint {
 
     @GET("Binary/{id}")
-    fun getBinary(@Path("id") id: Long):Call<Binary>
+    fun getBinary(@Path("id") id: Int):Call<Binary>
 
     @GET("Binary")
     fun getBinaries():Call<List<Binary>>

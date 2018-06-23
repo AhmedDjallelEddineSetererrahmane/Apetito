@@ -8,7 +8,7 @@ import retrofit2.http.Path
 interface CategoryEndpoint {
 
     @GET("Category/{id}")
-    fun getCategory(@Path("id") id: Long):Call<Category>
+    fun getCategory(@Path("id") id: Int):Call<Category>
 
     @GET("Category")
     fun getCategories():Call<List<Category>>

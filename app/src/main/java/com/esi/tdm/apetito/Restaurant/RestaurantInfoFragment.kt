@@ -1,4 +1,4 @@
-package com.esi.tdm.apetito.fragments
+package com.esi.tdm.apetito.Restaurant
 
 
 import android.annotation.SuppressLint
@@ -31,12 +31,13 @@ import org.jetbrains.anko.support.v4.makeCall
 /**
  * A simple [Fragment] subclass.
  */
-class RestaurantInfoFragment(restaurant: Restaurant) : Fragment() ,OnMapReadyCallback{
+class RestaurantInfoFragment(_restaurant: Restaurant) : Fragment() ,OnMapReadyCallback{
 
 
     var _ctx = this
+
+    var restaurant = _restaurant
     var position = restaurant.position
-    var restaurant = restaurant
     var restaurantImages = arrayOf(restaurant.imageUrl,restaurant.imageUrl2,restaurant.imageUrl3)
     var geo = arrayOf(restaurant.latitude , restaurant.longitude)
     private lateinit var mMap: GoogleMap
@@ -48,7 +49,7 @@ class RestaurantInfoFragment(restaurant: Restaurant) : Fragment() ,OnMapReadyCal
         carouselView.pageCount = restaurantImages.size
         carouselView.setImageListener(imageListener)
         var utils = Utils()
-        var list = utils.populateRestosData(activity!!)
+
 
 
 
