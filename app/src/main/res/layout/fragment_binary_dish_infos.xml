@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout android:layout_margin="4dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="4dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_margin="16dp"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="9dp"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:src="@drawable/salade2"
+            android:scaleType="fitXY"
+            android:id="@+id/dishImageList1a"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_3"
+            android:layout_gravity="bottom"
+            android:paddingLeft="6dp"
+            android:text="Dish Name"
+            android:textColor="@color/mWhite"
+            android:textSize="24sp"
+            android:fontFamily="@font/poppinsregular"
+            android:textStyle="bold"
+            android:id="@+id/dishName1a"
+            />
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_margin="16dp"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="9dp"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:src="@drawable/salade2"
+            android:scaleType="fitXY"
+            android:id="@+id/dishImageList2a"/>
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_3"
+            android:layout_gravity="bottom"
+            android:paddingLeft="6dp"
+            android:text="Dish Name"
+            android:textColor="@color/mWhite"
+            android:textSize="24sp"
+            android:fontFamily="@font/poppinsregular"
+            android:textStyle="bold"
+            android:id="@+id/dishName2a"
+            />
+
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:layout_weight="3"
+            android:background="@drawable/shape_4"
+            android:fontFamily="@font/poppinsregular"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="ADD TO CART"
+            android:textAlignment="gravity"
+            android:textColor="@color/mWhite"
+            android:textSize="16sp"
+            android:id="@+id/addToCart"/>
+    </LinearLayout>
+</LinearLayout>

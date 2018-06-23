@@ -8,7 +8,7 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.esi.tdm.apetito.fragments.RestaurantInfoFragment">
+        tools:context="com.esi.tdm.apetito.Restaurant.RestaurantInfoFragment">
 
         <com.synnapps.carouselview.CarouselView
             android:id="@+id/restoCarousel"
@@ -52,32 +52,22 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="4"
-                    android:fontFamily="@font/robotobold"
+                    android:fontFamily="@font/ralewaysemibold"
                     android:padding="6dp"
                     android:text="Restaurant Name"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
-                    android:id="@+id/nameN"/>
+                    android:id="@+id/restoName"/>
 
                 <Space
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.5" />
+                    android:layout_weight="1.5" />
 
-                <ImageView
-                    android:id="@+id/openResto"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_store_black_24dp"/>
-                <Space
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"/>
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="1.2"
                     android:background="@drawable/shape_2"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="4,9"
@@ -85,10 +75,12 @@
                     android:textColor="@color/mWhite"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    android:id="@+id/ratingr"/>
+                    android:id="@+id/restoRate"
+                    android:fontFamily="@font/ralewaysemibold"/>
             </LinearLayout>
 
             <TextView
+                android:id="@+id/restoDescription"
                 android:padding="8dp"
                 android:layout_margin="12dp"
                 android:layout_width="match_parent"
@@ -117,7 +109,7 @@
                     android:layout_toEndOf="@id/i1" />
 
                 <TextView
-                    android:id="@+id/adradr"
+                    android:id="@+id/restoADR1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/sp1"
@@ -135,7 +127,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/adradr"
+                    android:layout_below="@id/restoADR1"
                     android:orientation="vertical"
                     android:layout_marginTop="8dp"
                     android:id="@+id/layout4">
@@ -159,7 +151,7 @@
                         android:layout_height="300dip"
                         android:layout_marginLeft="16dip"
                         android:layout_marginRight="16dip"
-                        tools:context="com.esi.tdm.apetito.fragments.RestaurantInfoFragment"
+                        tools:context="com.esi.tdm.apetito.Restaurant.RestaurantInfoFragment"
                         map:cameraBearing="112.5"
                         map:cameraTargetLat="-33.796923"
                         map:cameraTargetLng="150.922433"
@@ -270,8 +262,6 @@
                     android:layout_margin="6dp"/>
             </LinearLayout>
         </LinearLayout>
+
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
-
-
-

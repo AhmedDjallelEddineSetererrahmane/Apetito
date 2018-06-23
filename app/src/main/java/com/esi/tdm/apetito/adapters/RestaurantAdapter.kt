@@ -11,7 +11,10 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.esi.tdm.apetito.R
+import com.esi.tdm.apetito.config.baseUrl
 import com.esi.tdm.apetito.models.Restaurant
 import org.w3c.dom.Text
 
@@ -49,7 +52,11 @@ class RestaurantAdapter(_ctx:Context,_restosList:List<Restaurant>):BaseAdapter()
         var bitmap = BitmapFactory.decodeResource(ctx.resources,restosList.get(p0).listImage)
         var round = RoundedBitmapDrawableFactory.create(ctx.resources,bitmap)
         round.cornerRadius = 7.5F
-        //viewHolder.image.setImageResource(restosList.get(p0).listImage)
+//        Glide.with(ctx).load(baseUrl + restosList.get(p0).listImage)
+//
+//                .into(viewHolder.image)
+
+        viewHolder.image.setImageResource(restosList.get(p0).listImage)
         viewHolder.image.setImageDrawable(round)
         viewHolder.image.clipToOutline = true
         viewHolder.name.setText(restosList.get(p0).name)

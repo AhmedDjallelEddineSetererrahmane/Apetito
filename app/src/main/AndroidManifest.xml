@@ -52,7 +52,11 @@
         <activity
             android:name=".activities.TabActivity"
             android:label="@string/title_activity_tab"
-            android:theme="@style/Theme.AppTheme.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppTheme.Light.NoActionBar" />
+        <activity android:name=".fragments.binary_dish_info" />
+        <activity android:name=".activities.binaryDishInfo" />
+        <activity android:name=".Restaurant.activity_restaurant" />
+        <activity android:name=".Restaurant.RestaurantsActivity"></activity>
     </application>
 
 </manifest>

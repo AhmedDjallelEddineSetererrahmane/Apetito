@@ -1,12 +1,15 @@
 package com.esi.tdm.apetito
 
+import android.arch.persistence.room.Room
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
-
+import com.esi.tdm.apetito.Database.AppDataBase
+import org.junit.After
+import org.junit.Assert
+import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 
-import org.junit.Assert.*
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -15,10 +18,29 @@ import org.junit.Assert.*
  */
 @RunWith(AndroidJUnit4::class)
 class ExampleInstrumentedTest {
-    @Test
-    fun useAppContext() {
-        // Context of the app under test.
-        val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("com.esi.tdm.apetito", appContext.packageName)
+
+    var appDataBase: AppDataBase?= null
+
+    @Before
+    fun initDB() {
+        appDataBase =
+                Room.inMemoryDatabaseBuilder(InstrumentationRegistry
+                        .getContext(),AppDataBase::class.java).build()
     }
+
+    @After
+    fun closeDb(){
+        appDataBase?.close()
+    }
+
+    @Test
+    fun insertAndGetTeam() {
+        val position1 = Position(latitude = 2.00 , longitude = 2.00)
+        appDataBase?.getPositionDao()?.addPosition(position1)
+        val  positions = appDataBase?.getPositionDao()?.getPositions()
+        val position2 = positions?.get(0)
+        Assert.assertEquals(position1,position2)
+    }
+
+
 }

@@ -7,21 +7,23 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.TextView
+import com.esi.tdm.apetito.Category.CategoriesFragment
+import com.esi.tdm.apetito.Entity.Restaurant
 import com.esi.tdm.apetito.R
+import com.esi.tdm.apetito.Restaurant.RestaurantInfoFragment
 import com.esi.tdm.apetito.fragments.*
-import com.esi.tdm.apetito.utlis.Utils
 import kotlinx.android.synthetic.main.activity_restaurant.*
 import kotlinx.android.synthetic.main.app_bar_restaurant.*
 
 class RestaurantActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     var position = 0
+    lateinit var restaurant :Restaurant
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_restaurant)
         setSupportActionBar(toolbar)
-
+        restaurant= intent.getSerializableExtra("restaurant") as Restaurant
         //fab.setOnClickListener { view ->
             //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     //.setAction("Action", null).show()
@@ -33,10 +35,10 @@ class RestaurantActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         toggle.syncState()
 
 
-        position = intent.getIntExtra("pos",0)
+
 
         supportFragmentManager.beginTransaction()
-                .replace(R.id.mainFrame,RestaurantInfoFragment(position))
+                .replace(R.id.mainFrame, RestaurantInfoFragment(restaurant))
                 .commit()
         nav_view.setNavigationItemSelectedListener(this)
 
@@ -71,12 +73,12 @@ class RestaurantActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         when (item.itemId) {
             R.id.home -> {
                 supportFragmentManager.beginTransaction()
-                        .replace(R.id.mainFrame,RestaurantInfoFragment(position))
+                        .replace(R.id.mainFrame, RestaurantInfoFragment(restaurant))
                         .commit()
             }
             R.id.categorie -> {
                 supportFragmentManager.beginTransaction()
-                        .replace(R.id.mainFrame,CategoriesFragment())
+                        .replace(R.id.mainFrame, CategoriesFragment())
                         .commit()
             }
             R.id.allDishes -> {

@@ -3,6 +3,7 @@ package com.esi.tdm.apetito.utlis
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.view.View
 import com.esi.tdm.apetito.R
 import com.esi.tdm.apetito.models.*
 
@@ -119,4 +120,5 @@ class Utils {
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(twitterUrl))
         ctx.startActivity(intent)
     }
+
 }

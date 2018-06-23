@@ -1,5 +1,6 @@
 package com.esi.tdm.apetito
 
+import junit.framework.Assert.assertEquals
 import org.junit.Test
 
 import org.junit.Assert.*
