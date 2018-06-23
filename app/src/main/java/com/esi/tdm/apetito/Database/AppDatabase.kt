@@ -12,7 +12,7 @@ import com.esi.tdm.apetito.Entity.*
                              CartItem::class ,
                              Category::class ,
                              Dish::class ,
-                             Position::class ,
+
                              Reservation::class ,
                              Restaurant::class )
          ,version = 1)
@@ -22,7 +22,7 @@ abstract class AppDataBase:RoomDatabase() {
     abstract fun getCartItemDao():CartItemDao
     abstract fun getCategoryDao():CategoryDao
     abstract fun getDishDao(): DishDao
-    abstract fun getPositionDao(): PositionDao
+
     abstract fun getReservationDao(): ReservationDao
     abstract fun getRestaurantDao(): RestaurantDao
 

@@ -17,7 +17,7 @@ object RoomService {
         if (INSTANCE == null) {
             synchronized(AppDataBase::class) {
                 INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                        AppDataBase::class.java, "dbapetito.db")
+                        AppDataBase::class.java, "bddapetito8.db")
                         .allowMainThreadQueries()
                         .build()
             }

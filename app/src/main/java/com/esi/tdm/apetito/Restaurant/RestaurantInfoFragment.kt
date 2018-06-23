@@ -9,9 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 
 import com.esi.tdm.apetito.R
-import com.esi.tdm.apetito.models.Position
+import com.esi.tdm.apetito.Entity.Restaurant
+import com.esi.tdm.apetito.config.imageBaseUrl
 import com.esi.tdm.apetito.utlis.Utils
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -29,12 +31,14 @@ import org.jetbrains.anko.support.v4.makeCall
 /**
  * A simple [Fragment] subclass.
  */
-class RestaurantInfoFragment(position: Int) : Fragment() ,OnMapReadyCallback{
+class RestaurantInfoFragment(restaurant: Restaurant) : Fragment() ,OnMapReadyCallback{
 
 
-    var position = position
-    var restaurantImages = arrayOf(R.drawable.resto_1,R.drawable.resto_2,R.drawable.resto_3)
-    var geo = Position(0.0,0.0)
+    var _ctx = this
+    var position = restaurant.position
+    var restaurant = restaurant
+    var restaurantImages = arrayOf(restaurant.imageUrl,restaurant.imageUrl2,restaurant.imageUrl3)
+    var geo = arrayOf(restaurant.latitude , restaurant.longitude)
     private lateinit var mMap: GoogleMap
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -47,21 +51,26 @@ class RestaurantInfoFragment(position: Int) : Fragment() ,OnMapReadyCallback{
         var list = utils.populateRestosData(activity!!)
 
 
+
         var restoName = view.findViewById<TextView>(R.id.restoName) as TextView
         var restoADR1  = view.findViewById<TextView>(R.id.restoADR1) as TextView
         var restoRate = view.findViewById<TextView>(R.id.restoRate) as TextView
+        var restoDescription = view.findViewById<TextView>(R.id.restoDescription) as TextView
 
-        restoName.setText(list[position].name)
-        restoADR1.setText(list[position].adr)
-        restoRate.setText(list[position].rating.toString())
+
+        restoName.setText(restaurant.name)
+        restoADR1.setText(restaurant.adr)
+        restoRate.setText(restaurant.rating.toString())
+        restoDescription.setText(restaurant.description)
+
         var facebook = view.findViewById<ImageView>(R.id.facebook) as ImageView
         var twitter = view.findViewById<ImageView>(R.id.twitter) as ImageView
         var email = view.findViewById<TextView>(R.id.email) as TextView
         var phone = view.findViewById<TextView>(R.id.phoneNumber) as TextView
 
 
-        val facebookUrl  = "fb://page/218641444910278"
-        var twitterUrl = "twitter://user?user_id=382267114"
+        val facebookUrl  = restaurant.facebookUrl
+        var twitterUrl = restaurant.twitterUrl
         facebook.setOnClickListener(View.OnClickListener {
             activity?.let { it1 -> utils.openFacebookPage(it1,facebookUrl) }
         })
@@ -76,7 +85,7 @@ class RestaurantInfoFragment(position: Int) : Fragment() ,OnMapReadyCallback{
             email(email.text.toString(),"Commande","")
         })
 
-         geo = list[position].geoPosition
+
 
         val mapFragment = childFragmentManager
                 .findFragmentById(R.id.map1) as SupportMapFragment
@@ -84,14 +93,15 @@ class RestaurantInfoFragment(position: Int) : Fragment() ,OnMapReadyCallback{
         return view
     }
     var imageListener = ImageListener{position, imageView ->
-        imageView.setImageResource(restaurantImages[position])
+        Glide.with(_ctx).load(imageBaseUrl + restaurantImages[position])
+                .into(imageView)
     }
 
     override fun onMapReady(p0: GoogleMap) {
         mMap = p0
 
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(geo.latitude, geo.longitude)
+        val sydney = LatLng(geo[0], geo[1])
         mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }

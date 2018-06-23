@@ -4,8 +4,6 @@ import android.arch.persistence.room.Room
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
 import com.esi.tdm.apetito.Database.AppDataBase
-import com.esi.tdm.apetito.Entity.Position
-import junit.framework.Assert.assertEquals
 import org.junit.After
 import org.junit.Assert
 import org.junit.Before

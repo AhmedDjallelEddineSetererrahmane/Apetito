@@ -8,11 +8,7 @@ import android.support.annotation.ColorInt
 import java.io.Serializable
 
 
-@Entity(tableName = "restaurants",
-        foreignKeys = arrayOf(ForeignKey(entity = Position::class,
-                parentColumns = arrayOf("position_id"),
-                childColumns = arrayOf("position_id"),
-                onDelete = ForeignKey.CASCADE)) )
+@Entity(tableName = "restaurants")
 
 data class Restaurant(@PrimaryKey
                       @ColumnInfo(name="restaurant_id")
@@ -27,8 +23,16 @@ data class Restaurant(@PrimaryKey
                       var ClosingHour: String = "",
                       var rating: Float = 0F,
                       var listImage : Int=0,
+                      var imageUrl : String?="" ,
+                      var imageUrl2 : String?="" ,
+                      var imageUrl3 : String?="" ,
                       @ColumnInfo(name = "facebook_url")
                       var facebookUrl:String="",
                       @ColumnInfo(name = "twitter_url")
-                      var twitterUrl:String=""
+                      var twitterUrl:String="",
+                      var email:String,
+                      var phone :String,
+                      var description :String,
+                      var latitude: Double = 0.0,
+                      var longitude: Double = 0.0
 ) :Serializable

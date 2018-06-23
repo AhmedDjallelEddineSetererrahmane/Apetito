@@ -80,6 +80,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/restoDescription"
                 android:padding="8dp"
                 android:layout_margin="12dp"
                 android:layout_width="match_parent"
@@ -261,5 +262,6 @@
                     android:layout_margin="6dp"/>
             </LinearLayout>
         </LinearLayout>
+
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
