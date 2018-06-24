@@ -51,7 +51,7 @@ class CategoryDishesFragment(_category : Category) : Fragment() {
             else{
 
                 val intent = Intent(activity , DishInfoActivity::class.java)
-                intent.putExtra("dish",dish)
+                intent.putExtra("Dish",dish)
                 startActivity(intent)
             }
         }
