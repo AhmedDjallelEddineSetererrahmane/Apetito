@@ -2,28 +2,14 @@ package example.android.com.dataserverpersistance.viewmodel
 
 import android.app.Activity
 import android.arch.lifecycle.ViewModel
-import android.view.View
 
 import android.widget.ListView
 import android.widget.ProgressBar
-import com.bumptech.glide.Glide
 import com.esi.tdm.apetito.Adapter.DishAdapter
-import com.esi.tdm.apetito.Category.CategoryAdpater
 import com.esi.tdm.apetito.Database.RoomService
-import com.esi.tdm.apetito.Entity.Category
 import com.esi.tdm.apetito.Entity.Dish
-import com.esi.tdm.apetito.R
-
-import com.esi.tdm.apetito.config.imageBaseUrl
 import com.esi.tdm.apetito.retrofit.RetrofitService
-import kotlinx.android.synthetic.main.categorie_item_layout.*
-import kotlinx.android.synthetic.main.fragment_categories.*
-
-import kotlinx.android.synthetic.main.restaurant_layout.*
-
 import org.jetbrains.anko.toast
-
-
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -32,9 +18,16 @@ import retrofit2.Response
 
 class DishViewModel:ViewModel() {
 
+
     lateinit var progressBarDish : ProgressBar
     var dish:Dish? = null
     var dishes:List<Dish>? =null
+    var EntryDishes:List<Dish>? =null
+    var VegeDishes:List<Dish>? =null
+    var DiabiticDishes:List<Dish>? =null
+    var PrincipalDishes:List<Dish>? =null
+    var dessertDishes:List<Dish>? =null
+    var drinkDishes:List<Dish>? =null
     lateinit var listView : ListView
     fun loadData(act:Activity, listView: ListView ) {
 //        progressBarDish = act.findViewById<ProgressBar>(R.id.progressBarDish)
@@ -52,7 +45,6 @@ class DishViewModel:ViewModel() {
         }
         else {
 //            progressBarDish.visibility = View.GONE
-
             listView.adapter = DishAdapter(act, dishes!!)
         }
 
@@ -61,7 +53,8 @@ class DishViewModel:ViewModel() {
 
     private fun getListFromRemote(act:Activity , listView: ListView) {
         act.toast("FETCHING...")
-        val call = RetrofitService.DishEndpoint.getDishes()
+
+        val call = RetrofitService.DishEndpoint.getDishesByCategory("5b2e050ca669da1001e692b4")
         call.enqueue(object : Callback<List<Dish>> {
             override fun onResponse(call: Call<List<Dish>>?, response: Response<List<Dish>>?) {
 
@@ -69,11 +62,11 @@ class DishViewModel:ViewModel() {
                 act.toast("Before ...")
                 if (response?.isSuccessful!!) {
                     dishes = response?.body()
-                    act.toast(dish.toString())
+                    //act.toast(dishes!!.size)
 //                    progressBarDish.visibility = View.GONE
                     listView.adapter = DishAdapter(act, dishes!!)
                     val db = RoomService.getInstance(act)
-                    dishes = db?.getDishDao()?.getDishes()
+                    db?.getDishDao()?.addDishes(dishes!!)
                     RoomService.destroyInstance()
                 } else {
                     act.toast("Une erreur s'est produite")
@@ -134,8 +127,8 @@ class DishViewModel:ViewModel() {
 //    }
 //
 //    fun displayDatail(act: Activity,category: Category) {
-//        Glide.with(act).load(imageBaseUrl + category.imageUrl)
-//                .into(act.restaurantImage)
+    //        Glide.with(act).load(imageBaseUrl + category.imageUrl)
+    //                .into(act.restaurantImage)
 //        act.categoryName?.text = category.name
 //
 //    }

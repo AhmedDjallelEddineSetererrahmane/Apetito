@@ -37,7 +37,7 @@ class RestaurantInfoFragment(_restaurant: Restaurant) : Fragment() ,OnMapReadyCa
     var _ctx = this
 
     var restaurant = _restaurant
-    var position = restaurant.position
+
     var restaurantImages = arrayOf(restaurant.imageUrl,restaurant.imageUrl2,restaurant.imageUrl3)
     var geo = arrayOf(restaurant.latitude , restaurant.longitude)
     private lateinit var mMap: GoogleMap
@@ -73,10 +73,12 @@ class RestaurantInfoFragment(_restaurant: Restaurant) : Fragment() ,OnMapReadyCa
         val facebookUrl  = restaurant.facebookUrl
         var twitterUrl = restaurant.twitterUrl
         facebook.setOnClickListener(View.OnClickListener {
-            activity?.let { it1 -> utils.openFacebookPage(it1,facebookUrl) }
+            if(facebookUrl !=null) activity?.let { it1 -> utils.openFacebookPage(it1,facebookUrl) }
         })
         twitter.setOnClickListener(View.OnClickListener {
-            activity?.let { it1 -> utils.openTwitterPage(it1,twitterUrl) }
+            if(twitterUrl !=null) activity?.let { it1 -> utils.openTwitterPage(it1,twitterUrl)
+
+            }
         })
 
         phone.setOnClickListener(View.OnClickListener {

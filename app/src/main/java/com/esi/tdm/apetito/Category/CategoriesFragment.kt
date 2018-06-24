@@ -13,8 +13,7 @@ import android.widget.ListView
 import com.esi.tdm.apetito.Entity.Category
 
 import com.esi.tdm.apetito.R
-import com.esi.tdm.apetito.activities.DishInfoActivity
-import com.esi.tdm.apetito.fragments.*
+import com.esi.tdm.apetito.Dish.DishInfoActivity
 import com.esi.tdm.apetito.utlis.Utils
 import example.android.com.dataserverpersistance.viewmodel.CategoryViewModel
 

@@ -1,7 +1,6 @@
 package com.esi.tdm.apetito.fragments
 
 
-import android.arch.lifecycle.ViewModelProvider
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -12,9 +11,8 @@ import android.view.ViewGroup
 import android.widget.ListView
 
 import com.esi.tdm.apetito.R
-import com.esi.tdm.apetito.activities.DishInfoActivity
+import com.esi.tdm.apetito.Dish.DishInfoActivity
 import com.esi.tdm.apetito.adapters.DishesAdapter
-import com.esi.tdm.apetito.helpers.DishModel
 import com.esi.tdm.apetito.models.Dish
 import com.esi.tdm.apetito.utlis.Utils
 import kotlinx.android.synthetic.main.fragment_dish_infos.*

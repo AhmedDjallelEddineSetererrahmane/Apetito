@@ -71,8 +71,7 @@ class RestaurantViewModel:ViewModel() {
 //                act.progressBarRestaurant.visibility = View.GONE
                 act.toast("Before ...")
                 if (response?.isSuccessful!!) {
-                    restaurants = response?.body()
-                    act.toast(restaurant.toString())
+                    restaurants = response?.body() as List<Restaurant>
 //                    act.progressBarRestaurant.visibility = View.GONE
                     if (isTwoPane) {
                         listView.adapter = RestaurantAdapter(act, restaurants!!)
@@ -81,8 +80,7 @@ class RestaurantViewModel:ViewModel() {
                     }
                     // save cities in SQLite DB
                     val db = RoomService.getInstance(act)
-
-                    restaurants = db?.getRestaurantDao()?.getRestaurants()
+                     db?.getRestaurantDao()?.addRestaurants(restaurants!!)
                     RoomService.destroyInstance()
                 } else {
                     act.toast("Une erreur s'est produite")
@@ -109,8 +107,8 @@ class RestaurantViewModel:ViewModel() {
 
         act.progressBarRestaurant2.visibility = View.VISIBLE
         // load city detail from SQLite DB
-        this.restaurant = RoomService.getInstance(act)?.getRestaurantDao()?.getRestaurantById(restaurant.idRestaurant)
-        if(this.restaurant?.listImage==null) {
+        this.restaurant = RoomService.getInstance(act)?.getRestaurantDao()?.getRestaurantById(restaurant._id)
+        if(this.restaurant?.imageUrl==null) {
             // if the city details don't exist, load the details from server and update SQLite DB
             loadDetailFromRemote(act,restaurant)
         }
@@ -121,7 +119,7 @@ class RestaurantViewModel:ViewModel() {
     }
 
     private fun loadDetailFromRemote(act:Activity,restaurant: Restaurant) {
-        val call = RetrofitService.RestaurantEndpoint.getRestaurant(restaurant.idRestaurant)
+        val call = RetrofitService.RestaurantEndpoint.getRestaurant(restaurant._id)
         call.enqueue(object : Callback<Restaurant> {
             override fun onResponse(call: Call<Restaurant>?, response: Response<Restaurant>?) {
                 act.progressBarRestaurant2.visibility = View.GONE

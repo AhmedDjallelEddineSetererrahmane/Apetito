@@ -9,11 +9,15 @@ interface CartItemDao {
     @Query("select * from cart_items")
     fun getCartItems():List<CartItem>
 
-    @Query("select * from cart_items where cart_item_id=:idCartItem")
-    fun getCartItemById(idCartItem:Int): CartItem
+    @Query("select * from cart_items where _id=:idCartItem")
+    fun getCartItemById(idCartItem:String): CartItem
 
     @Insert
     fun addCartItem(vararg cartItem: CartItem)
+
+
+    @Insert
+    fun addCartItems( cartItems: List<CartItem>)
 
     @Update
     fun updateCartItem(cartItem: CartItem)

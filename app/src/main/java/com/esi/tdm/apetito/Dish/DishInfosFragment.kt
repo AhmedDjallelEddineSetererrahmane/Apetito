@@ -1,4 +1,4 @@
-package com.esi.tdm.apetito.fragments
+package com.esi.tdm.apetito.Dish
 
 
 import android.os.Bundle
@@ -13,11 +13,7 @@ import android.widget.TextView
 import com.esi.tdm.apetito.R
 import com.esi.tdm.apetito.models.CartItem
 import com.esi.tdm.apetito.models.CartItems
-import kotlinx.android.synthetic.main.fragment_dish_infos.*
-import org.jetbrains.anko.db.INTEGER
 import org.jetbrains.anko.image
-import org.jetbrains.anko.imageResource
-import org.jetbrains.anko.support.v4.act
 import org.jetbrains.anko.support.v4.toast
 
 

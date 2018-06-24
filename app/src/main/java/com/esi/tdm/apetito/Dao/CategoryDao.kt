@@ -11,11 +11,14 @@ interface CategoryDao {
     fun getCategories():List<Category>
 
 
-    @Query("select * from categories where category_id=:idCategory")
-    fun getCategoryById(idCategory:Int): Category
+    @Query("select * from categories where _id=:idCategory")
+    fun getCategoryById(idCategory:String): Category
 
     @Insert
     fun addCategory(vararg category: Category)
+
+    @Insert
+    fun addCategories( categories: List<Category>)
 
     @Update
     fun updateCategory(category: Category)

@@ -4,38 +4,32 @@ import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.ForeignKey
 import android.arch.persistence.room.PrimaryKey
+import android.support.annotation.Nullable
 import java.io.Serializable
 
-@Entity(tableName = "dishes",
-        foreignKeys = arrayOf(
-                ForeignKey(entity = Restaurant::class,
-                        parentColumns = arrayOf("restaurant_id"),
-                        childColumns = arrayOf("restaurant_id"),
-                        onDelete = ForeignKey.CASCADE) ,
-                ForeignKey(entity = Category::class,
-                        parentColumns = arrayOf("category_id"),
-                        childColumns = arrayOf("category_id"),
-                        onDelete = ForeignKey.CASCADE),
-                ForeignKey(entity = Binary::class,
-                        parentColumns = arrayOf("binary_id"),
-                        childColumns = arrayOf("binary_id"),
-                        onDelete = ForeignKey.CASCADE)
+@Entity(tableName = "dishes")
 
-        )
-)
 
 data class Dish(@PrimaryKey
-                @ColumnInfo(name="dish_id")
-                var idDish:Int,
+                @ColumnInfo(name="_id")
+                var _id:String,
                 var name: String = "",
-                var description: String = "",
+                @Nullable
+                var description: String?="",
+                @Nullable
                 var price: Float = 0F,
-                var listImage:Int=0 ,
                 @ColumnInfo(name = "restaurant_id")
-                var idRestaurant:Int=0 ,
+                @Nullable
+                var idRestaurant:String?="",
                 @ColumnInfo(name = "category_id")
-                var idCategory:Int=0 ,
+                @Nullable
+                var idCategory:String?="",
                 @ColumnInfo(name = "binary_id")
-                var idBinary:Int=0 ,
-                var imageUrl:String?=""
+                @Nullable
+                var idBinary:String?="",
+                @Nullable
+                var imageUrl:String?="" ,
+                @ColumnInfo(name = "in_cart")
+                @Nullable
+                var inCart:Boolean?=false
 ):Serializable

@@ -10,10 +10,8 @@ import android.view.ViewGroup
 import android.widget.ListView
 
 import com.esi.tdm.apetito.R
-import com.esi.tdm.apetito.activities.DishInfoActivity
 import com.esi.tdm.apetito.activities.binaryDishInfo
 import com.esi.tdm.apetito.adapters.BinaryAdapter
-import com.esi.tdm.apetito.adapters.DishesAdapter
 import com.esi.tdm.apetito.utlis.Utils
 
 

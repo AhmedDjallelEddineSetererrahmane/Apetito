@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.esi.tdm.apetito.activities.DishInfoActivity">
+    tools:context="com.esi.tdm.apetito.Dish.DishInfoActivity">
 
     <fragment
         android:id="@+id/fragment"
-        android:name="com.esi.tdm.apetito.fragments.DishInfosFragment"
+        android:name="com.esi.tdm.apetito.Dish.DishInfosFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"

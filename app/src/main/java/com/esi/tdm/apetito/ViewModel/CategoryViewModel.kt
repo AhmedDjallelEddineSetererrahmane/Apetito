@@ -74,7 +74,7 @@ class CategoryViewModel:ViewModel() {
 //                    progressBarCategory.visibility = View.GONE
                     listView.adapter = CategoryAdpater(act, categories!!)
                     val db = RoomService.getInstance(act)
-                    categories = db?.getCategoryDao()?.getCategories()
+                    db?.getCategoryDao()?.addCategories(categories!! )
                     RoomService.destroyInstance()
                 } else {
                     act.toast("Une erreur s'est produite")
