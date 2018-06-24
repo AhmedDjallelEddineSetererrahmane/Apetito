@@ -3,13 +3,17 @@ package com.esi.tdm.apetito.Entity
 import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
+import android.support.annotation.Nullable
 import java.io.Serializable
 
 
 @Entity(tableName = "reservations")
 data class Reservation(@PrimaryKey
-                       @ColumnInfo(name="reservation_id")
-                       var idReservation:Int,
+                       @ColumnInfo(name="_id")
+                       var _id:String,
+                       @Nullable
                        var peopleNB:Int=0,
-                       var date:String="",
-                       var hour:String="") :Serializable
+                       @Nullable
+                       var date:String?="",
+                       @Nullable
+                       var hour:String?="") :Serializable

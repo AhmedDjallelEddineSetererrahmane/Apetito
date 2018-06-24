@@ -12,7 +12,7 @@ import retrofit2.http.Path
 interface CartItemEndpoint {
 
     @GET("CartItem/{id}")
-    fun getCartItem(@Path("id") id: Int):Call<CartItem>
+    fun getCartItem(@Path("id") id: String):Call<CartItem>
 
     @GET("CartItem")
     fun getCartItem():Call<List<CartItem>>
@@ -20,5 +20,9 @@ interface CartItemEndpoint {
 
     @POST("CartItem")
     fun addCartItem(@Body cartItem : CartItem): Call<CartItem>
+
+    @POST("CartItem")
+    fun addCartItems(@Body cartItem : List<CartItem>): Call<List<CartItem>>
+
 
 }

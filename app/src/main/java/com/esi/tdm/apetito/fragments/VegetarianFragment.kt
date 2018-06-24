@@ -11,7 +11,7 @@ import android.view.ViewGroup
 import android.widget.ListView
 
 import com.esi.tdm.apetito.R
-import com.esi.tdm.apetito.activities.DishInfoActivity
+import com.esi.tdm.apetito.Dish.DishInfoActivity
 import com.esi.tdm.apetito.adapters.DishesAdapter
 import com.esi.tdm.apetito.models.Dish
 import com.esi.tdm.apetito.utlis.Utils

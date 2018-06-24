@@ -37,12 +37,8 @@ class MyBasketFragment : Fragment() {
         for (i in 0..CartItems.list.size-1) total = total+ CartItems.list.get(i).totalPrice
         totalAmount.text = "total Commade : "+total.toString()+"DA"
         orderBtn.setOnClickListener(View.OnClickListener {
-            if (CartItems.list.size==0){
-                toast("aucun plat ajouté au panier vous pouvez pas commander")
-            }
-            else{
-                startActivity(intentFor<OrderActivity>())
-            }
+            startActivity(intentFor<OrderActivity>())
+
         })
 
         list.setOnItemClickListener{adapterView,view,i,l ->

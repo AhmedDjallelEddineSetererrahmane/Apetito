@@ -88,7 +88,7 @@
             android:layout_marginTop="30dip"
             android:background="@drawable/shape_6"
             android:padding="12dip"
-            android:text="Passer la commande"
+            android:text="Procceder au payement"
             android:textColor="@color/mWhite"
             android:textSize="20dip"
             android:textStyle="bold"

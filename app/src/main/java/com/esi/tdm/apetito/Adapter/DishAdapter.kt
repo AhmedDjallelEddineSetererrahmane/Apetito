@@ -49,7 +49,7 @@ class DishAdapter(_ctx: Context, _dishesList:List<Dish>): BaseAdapter() {
                 .into(viewHolder.image)
         //viewHolder.image.setImageResource(restosList.get(p0).listImage)
         //viewHolder.image.setImageDrawable(round)
-        viewHolder.image.clipToOutline = true
+        //viewHolder.image.clipToOutline = true
         viewHolder.name.setText(dishesList.get(p0).name)
         viewHolder.price.setText(dishesList.get(p0).price.toString())
         return view

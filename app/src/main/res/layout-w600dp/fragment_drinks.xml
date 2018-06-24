@@ -14,7 +14,7 @@
 
     <fragment
         android:id="@+id/fragment5"
-        android:name="com.esi.tdm.apetito.fragments.DishInfosFragment"
+        android:name="com.esi.tdm.apetito.Dish.DishInfosFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"

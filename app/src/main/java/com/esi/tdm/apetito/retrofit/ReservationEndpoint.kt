@@ -12,7 +12,7 @@ import retrofit2.http.Path
 interface ReservationEndpoint {
 
     @GET("Reservation/{id}")
-    fun getReservation(@Path("id") id: Int):Call<Reservation>
+    fun getReservation(@Path("id") id: String):Call<Reservation>
 
     @GET("Reservation")
     fun getReservation():Call<List<Reservation>>
@@ -20,5 +20,8 @@ interface ReservationEndpoint {
 
     @POST("Reservation")
     fun addReservation(@Body reservation : Reservation): Call<Reservation>
+
+    @POST("Reservation")
+    fun addReservations(@Body reservation : List<Reservation>): Call<List<Reservation>>
 
 }

@@ -41,6 +41,7 @@ class RestaurantAdapter(_ctx:Context,_restosList:List<Restaurant>):BaseAdapter()
             var name = view?.findViewById<TextView>(R.id.restaurantName) as TextView
             var adr = view?.findViewById<TextView>(R.id.restaurantAdr) as TextView
             var opening = view?.findViewById<TextView>(R.id.restaurantOpening) as TextView
+
             var rating = view?.findViewById<TextView>(R.id.rating) as TextView
             viewHolder = ViewHolder(image,name,adr,opening,rating)
             view.setTag(viewHolder)
@@ -48,9 +49,9 @@ class RestaurantAdapter(_ctx:Context,_restosList:List<Restaurant>):BaseAdapter()
             viewHolder = view.getTag() as ViewHolder
         }
 
-        var bitmap = BitmapFactory.decodeResource(ctx.resources,restosList.get(p0).listImage)
-        var round = RoundedBitmapDrawableFactory.create(ctx.resources,bitmap)
-        round.cornerRadius = 7.5F
+//        var bitmap = BitmapFactory.decodeResource(ctx.resources,restosList.get(p0).imageUrl)
+//        var round = RoundedBitmapDrawableFactory.create(ctx.resources,bitmap)
+//        round.cornerRadius = 7.5F
         Glide.with(ctx).load(imageBaseUrl
                 + restosList.get(p0).imageUrl)
 
